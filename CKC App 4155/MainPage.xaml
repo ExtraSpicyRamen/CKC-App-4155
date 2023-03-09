@@ -1,41 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CKC_App_4155.MainPage">
+             x:Class="CKC_App_4155.MainPage"
+             Shell.NavBarIsVisible="False">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
+    <Grid>
+        <StackLayout Margin="20">
+            <StackLayout Margin="0,150,0,30">
+                <Label TextColor="DarkGreen" FontSize="30" FontFamily="RockWellBold">Cool Kids Campaign</Label>
+                <Label FontSize="15" FontFamily="RockWell" >Sign in to Continue</Label>
+            </StackLayout>
+            <StackLayout>
+                <Grid>
+                    <Frame BorderColor="Black" CornerRadius="0"></Frame>
+                    <Entry PlaceholderColor="black" Placeholder="Username"></Entry>
+                </Grid>
+                <Grid Margin="0,20,0,0">
+                    <Frame BorderColor="Black" CornerRadius="0"></Frame>
+                    <Entry PlaceholderColor="black" IsPassword="True" Placeholder="Password"></Entry>
+                </Grid>
+            </StackLayout>
+            <Button Text="Sign in" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15"></Button>
+            <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                <Label Text="Forgot Password?" FontFamily="RockWellBold" HorizontalOptions="StartAndExpand"></Label>
+                <Label Text="Register" FontFamily="RockWellBold" HorizontalOptions="EndAndExpand"></Label>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
 
 </ContentPage>
