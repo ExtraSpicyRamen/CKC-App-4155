@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CKC_App_4155.EventDetailPage"
+             Title="EventDetailPage">
+    <StackLayout Margin="20">
+        <Grid RowDefinitions="100, Auto, *"
+              Padding="5">
+
+            <Image Grid.ColumnSpan="2"
+                   Source="ck_event_may.png"/>  
+           
+
+        </Grid>
+        
+    </StackLayout>
+</ContentPage>
