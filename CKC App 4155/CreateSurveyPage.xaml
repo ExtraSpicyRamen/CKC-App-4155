@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CKC_App_4155.CreateSurveyPage"
+             Title="CreateSurveyPage"
+             Shell.NavBarIsVisible="False">
+    <Grid>
+        <StackLayout Margin="20">
+            <StackLayout Margin="0,0,0,10">
+                <Label TextColor="DarkGreen" FontSize="30" FontFamily="RockWellBold">Survey Creation</Label>
+            </StackLayout>
+            <StackLayout>
+                <Grid>
+                    <Frame BorderColor="Black" CornerRadius="0"></Frame>
+                    <Entry PlaceholderColor="black" Placeholder="Enter a Survey Name"></Entry>
+                </Grid>
+                <Grid Margin="0,10,0,0">
+                    <Frame BorderColor="Black" CornerRadius="0" WidthRequest="130" Margin="0,0,0,0"></Frame>
+                    <Picker x:Name="picker" Title="Number of choices" HorizontalTextAlignment="Center" SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:Int16}">
+                                <x:Int16>1</x:Int16>
+                                <x:Int16>2</x:Int16>
+                                <x:Int16>3</x:Int16>
+                                <x:Int16>4</x:Int16>
+                                <x:Int16>5</x:Int16>
+                                <x:Int16>6</x:Int16>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Grid>
+                <Label TextColor="DarkGreen" FontSize="30" FontFamily="RockWellBold" Margin="0,10,0,0" IsVisible="false" x:Name="CreateSurvey_Text">Enter your Choices</Label>
+                <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_1">
+                    <Frame BorderColor="Black" CornerRadius="0"></Frame>
+                    <Entry PlaceholderColor="black" Placeholder="Option 1"></Entry>
+                </Grid>
+                <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_2">
+                    <Frame BorderColor="Black" CornerRadius="0"></Frame>
+                    <Entry PlaceholderColor="black" Placeholder="Option 2"></Entry>
+                </Grid>
+                <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_3">
+                    <Frame BorderColor="Black" CornerRadius="0"></Frame>
+                    <Entry PlaceholderColor="black" Placeholder="Option 3"></Entry>
+                </Grid>
+                <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_4">
+                    <Frame BorderColor="Black" CornerRadius="0"></Frame>
+                    <Entry PlaceholderColor="black" Placeholder="Option 4"></Entry>
+                </Grid>
+                <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_5">
+                    <Frame BorderColor="Black" CornerRadius="0"></Frame>
+                    <Entry PlaceholderColor="black" Placeholder="Option 5"></Entry>
+                </Grid>
+                <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_6">
+                    <Frame BorderColor="Black" CornerRadius="0"></Frame>
+                    <Entry PlaceholderColor="black" Placeholder="Option 6"></Entry>
+                </Grid>
+            </StackLayout>
+            <Grid>
+                <Button Text="Create" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15, 180,0"></Button>
+                <Button Text="Cancel" FontSize="15" BackgroundColor="DarkGreen" Margin="180,15, 0, 0"></Button>
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>
