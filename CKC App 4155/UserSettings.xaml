@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CKC_App_4155.UserSettings"
+             Shell.NavBarIsVisible="False">
+
+        <StackLayout>
+            <Label Text="Profile Settings" FontSize="Large" HorizontalOptions="Center" />
+            <StackLayout Margin="10">
+                <Label Text="Display Name" />
+                <Entry Placeholder="Enter your display name" />
+                <Label Text="Email" />
+                <Entry Placeholder="Enter your email address" />
+                <Label Text="Password" />
+                <Entry Placeholder="Enter your password" IsPassword="True" />
+                <Label Text="Confirm Password" />
+                <Entry Placeholder="Confirm your password" IsPassword="True" />
+                <Label Text="Profile Picture" />
+                <Image Source="{Binding ProfilePicture}" WidthRequest="100" HeightRequest="100" />
+                <Button Text="Upload Image" Command="{Binding UploadImageCommand}" />
+                <Button Text="Save" Command="{Binding SaveCommand}" />
+            </StackLayout>
+        </StackLayout>
+ 
+
+</ContentPage>

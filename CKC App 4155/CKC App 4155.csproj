@@ -53,6 +53,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="UserSettings.xaml.cs">
+	    <DependentUpon>UserSettings.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="UserSettings.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="CreateAccount.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
