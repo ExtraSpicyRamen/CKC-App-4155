@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CKC_App_4155.ViewSurveyPage"
+             Title="ViewSurveyPage"
+             Shell.NavBarIsVisible="False">
+    <Grid>
+        <StackLayout Margin="20">
+            <StackLayout Margin="0,0,0,10">
+                <Label TextColor="DarkGreen" FontSize="30" FontFamily="RockWellBold">Surveys</Label>
+            </StackLayout>
+            <StackLayout RadioButtonGroup.GroupName="surveyChoices" Margin="0,0,0,0" >
+                <Label FontSize="20" FontFamily="RockWell">Survey Title</Label>
+                <RadioButton Content="Choice1"/>
+                <RadioButton Content="Choice2"/>
+                <RadioButton Content="Choice3"/>
+                <RadioButton Content="Choice4"/>
+            </StackLayout>
+            <Button Text="Submit" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15"></Button>
+            <Button Text="Cancel" FontSize="15" BackgroundColor="DarkGreen" Margin="0,10"></Button>
+        </StackLayout>
+    </Grid>
+</ContentPage>
