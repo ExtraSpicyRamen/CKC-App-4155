@@ -28,11 +28,6 @@
                 <Label Text="Register" FontFamily="RockWellBold" HorizontalOptions="EndAndExpand"></Label>
             </StackLayout>
 
-            <!--<Button
-            Text="Event Details"
-            Command="{Binding NavigateCommand}">
-            </Button>-->
-            
         </StackLayout>
        
     </Grid>
