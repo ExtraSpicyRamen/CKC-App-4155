@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CKC_App_4155.HomePage"
+             Title="HomePage"
+             Shell.NavBarIsVisible="False">
+    <Grid>
+        <!-- menu nav -->
+        <Grid x:Name="MenuContainer">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#666666" Offset="0.0"></GradientStop>
+                    <GradientStop Color="Green" Offset="1.0"></GradientStop>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GridArea_Tapped"></TapGestureRecognizer>
+            </Grid.GestureRecognizers>
+            <VerticalStackLayout Margin="25,20,0,0" Spacing="20">
+                <Label Text="Menu" TextColor="White" FontSize="35"></Label>
+                <Label Text="Surveys" TextColor="White" FontSize="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GotoSurveys"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Calendar" TextColor="White" FontSize="20"></Label>
+                <Label Text="Messages" TextColor="White" FontSize="20"></Label>
+                <Label Text="Settings" TextColor="White" FontSize="20"></Label>
+            </VerticalStackLayout>
+        </Grid>
+        <!-- main content -->
+        <Grid x:Name="MainContentGrid" BackgroundColor="White">
+            <StackLayout>
+                <Image VerticalOptions="Start" Source="burger_menu.png" WidthRequest="55" HeightRequest="60" HorizontalOptions="Start">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Menu_Clicked"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Home" Margin="10,0,0,0" FontSize="50" TextColor="Green"></Label>
+                <ScrollView VerticalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Frame HeightRequest="250" Margin="10">
+                            <Label Text="News" FontSize="25" TextColor="Green"></Label>
+                        </Frame>
+                        <Frame HeightRequest="250" Margin="10">
+                            <Label Text="Events" FontSize="25" TextColor="Green"></Label>
+                        </Frame>
+                        <Frame HeightRequest="250" Margin="10">
+                            <Label Text="Surveys" FontSize="25" TextColor="Green"></Label>
+                        </Frame>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
