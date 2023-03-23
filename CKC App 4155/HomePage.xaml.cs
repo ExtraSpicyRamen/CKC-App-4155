@@ -22,4 +22,9 @@ public partial class HomePage : ContentPage
 		_ = MainContentGrid.ScaleTo(1, AnimationDuration);
 		await MainContentGrid.TranslateTo(0, 0, AnimationDuration, Easing.Linear);
     }
+
+    async void GotoSurveys(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new SurveysPage());
+    }
 }

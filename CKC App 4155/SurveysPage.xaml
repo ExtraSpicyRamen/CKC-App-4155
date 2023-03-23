@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CKC_App_4155.HomePage"
-             Title="HomePage"
+             x:Class="CKC_App_4155.SurveysPage"
              Shell.NavBarIsVisible="False">
     <Grid>
-        <!-- menu nav -->
+        <!--
+        *Nav bar functionality but not currently implemented. Transfer code from homepage.xml.cs to make it work properly if you need it
+        
         <Grid x:Name="MenuContainer">
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -28,28 +29,24 @@
                 <Label Text="Settings" TextColor="White" FontSize="20"></Label>
             </VerticalStackLayout>
         </Grid>
+        -->
         <!-- main content -->
         <Grid x:Name="MainContentGrid" BackgroundColor="White">
-            <StackLayout>
+            <StackLayout Margin="10,0,0,0" Spacing="20">
+                <!-- 
+                *This Image tag is meant for the navbar menu but not currently inplemented. Refer to homepage for reference of how it works.
+                
                 <Image VerticalOptions="Start" Source="burger_menu.png" WidthRequest="55" HeightRequest="60" HorizontalOptions="Start">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Menu_Clicked"></TapGestureRecognizer>
                     </Image.GestureRecognizers>
                 </Image>
-                <Label Text="Home" Margin="10,0,0,0" FontSize="50" TextColor="Green"></Label>
-                <ScrollView VerticalOptions="FillAndExpand">
-                    <StackLayout>
-                        <Frame HeightRequest="250" Margin="10">
-                            <Label Text="News" FontSize="25" TextColor="Green"></Label>
-                        </Frame>
-                        <Frame HeightRequest="250" Margin="10">
-                            <Label Text="Events" FontSize="25" TextColor="Green"></Label>
-                        </Frame>
-                        <Frame HeightRequest="250" Margin="10">
-                            <Label Text="Surveys" FontSize="25" TextColor="Green"></Label>
-                        </Frame>
-                    </StackLayout>
-                </ScrollView>
+                -->
+                <Label Text="Surveys" FontSize="50" TextColor="Green"></Label>
+                <Label Text="Active Surveys" FontSize="25" TextColor="Green"></Label>
+                <!-- Temporary solution for clicking will change later -->
+                <Button Text="Test survey" Clicked="GotoSurvey"></Button>
+                <Label Text="Past Surveys" FontSize="25" TextColor="Green"></Label>
             </StackLayout>
         </Grid>
     </Grid>

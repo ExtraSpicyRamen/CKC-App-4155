@@ -14,5 +14,10 @@ public partial class MainPage : ContentPage
     {
         await Navigation.PushAsync(new ForgotPasswordPage());
     }
+
+    async void GotoHomePage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new HomePage());
+    }
 }
 

@@ -22,7 +22,8 @@
                     <Entry PlaceholderColor="black" IsPassword="True" Placeholder="Password"></Entry>
                 </Grid>
             </StackLayout>
-            <Button Text="Sign in" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15"></Button>
+            <Button Text="Sign in" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15" Clicked="GotoHomePage">
+            </Button>
             <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <Label Text="Forgot Password?" FontFamily="RockWellBold" HorizontalOptions="StartAndExpand">
                     
