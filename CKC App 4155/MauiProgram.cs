@@ -1,5 +1,4 @@
-﻿using CKC_App_4155.ViewModel;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
 namespace CKC_App_4155;
 
@@ -18,16 +17,10 @@ public static class MauiProgram
                 fonts.AddFont("rockb.ttf", "RockWellBold");
             });
 
-		
-
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-        builder.Services.AddSingleton<MainPage>();
-        builder.Services.AddSingleton<MainViewModel>();
 
-        builder.Services.AddTransient<EventDetailPage>();
-        builder.Services.AddTransient<EventDetailViewModel>();
-        return builder.Build();
+		return builder.Build();
 	}
 }
