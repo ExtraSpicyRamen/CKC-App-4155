@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CKC_App_4155.AdminDash"
+             Title="AdminDash"
+             xmlns:viewmodel="clr-namespace:CKC_App_4155.ViewModel"
+             x:DataType="viewmodel:AdminDashViewModel"
+             Shell.NavBarIsVisible="False">
+    <Grid>
+        <StackLayout Margin="0,130,0,30" Padding="50">
+            <Label TextColor="DarkGreen" FontSize="30" FontFamily="RockWellBold">Admin Dashboard</Label>
+        </StackLayout>
+        
+        <StackLayout Margin="0,200,0,30" Padding="50">
+            <Grid>
+                <Button Text="Create User Accounts" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15" Clicked="GotoCreateAccount">
+                </Button>
+            </Grid>
+            <Grid Margin="0,20,0,0">
+                <Button Text="Edit / View User Accounts" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15">
+                </Button>
+            </Grid>
+            <Grid Margin="0,20,0,0">
+                <Button Text="Create Event" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15" Clicked="GotoAddEvent">
+                </Button>
+            </Grid>
+            <Grid Margin="0,20,0,0">
+                <Button Text="Create Survey" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15" Clicked="GotoCreateSurvey">
+                </Button>
+            </Grid>
+            <Grid Margin="0,20,0,0">
+                <Button Text="Edit / View Surveys" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15">
+                </Button>
+            </Grid>
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>
