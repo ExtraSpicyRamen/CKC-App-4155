@@ -9,23 +9,23 @@
         <Grid x:Name="MenuContainer">
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#666666" Offset="0.0"></GradientStop>
-                    <GradientStop Color="Green" Offset="1.0"></GradientStop>
+                    <GradientStop Color="#1e13a3" Offset="0.0"></GradientStop>
+                    <GradientStop Color="#1e13a3" Offset="1.0"></GradientStop>
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GridArea_Tapped"></TapGestureRecognizer>
             </Grid.GestureRecognizers>
             <VerticalStackLayout Margin="25,20,0,0" Spacing="20">
-                <Label Text="Menu" TextColor="White" FontSize="35"></Label>
-                <Label Text="Surveys" TextColor="White" FontSize="20">
+                <Label Text="Menu" TextColor="White" FontFamily="RockWellBold" FontSize="35"></Label>
+                <Label Text="Surveys" TextColor="White" FontFamily="RockWell" FontSize="20">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GotoSurveys"></TapGestureRecognizer>
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="Calendar" TextColor="White" FontSize="20"></Label>
-                <Label Text="Messages" TextColor="White" FontSize="20"></Label>
-                <Label Text="Settings" TextColor="White" FontSize="20"></Label>
+                <Label Text="Calendar" TextColor="White" FontFamily="RockWell" FontSize="20"></Label>
+                <Label Text="Messages" TextColor="White" FontFamily="RockWell" FontSize="20"></Label>
+                <Label Text="Settings" TextColor="White" FontFamily="RockWell" FontSize="20"></Label>
             </VerticalStackLayout>
         </Grid>
         <!-- main content -->
@@ -36,17 +36,17 @@
                         <TapGestureRecognizer Tapped="Menu_Clicked"></TapGestureRecognizer>
                     </Image.GestureRecognizers>
                 </Image>
-                <Label Text="Home" Margin="10,0,0,0" FontSize="50" TextColor="Green"></Label>
+                <Label Text="Home" Margin="10,0,0,0" Padding="20"  FontFamily="RockWellBold" FontSize="50" TextColor="#71c450"></Label>
                 <ScrollView VerticalOptions="FillAndExpand">
                     <StackLayout>
-                        <Frame HeightRequest="250" Margin="10">
-                            <Label Text="News" FontSize="25" TextColor="Green"></Label>
+                        <Frame HeightRequest="250" Margin="10" Padding="20">
+                            <Label Text="News" FontSize="25" FontFamily="RockWell" TextColor="#71c450"></Label>
                         </Frame>
-                        <Frame HeightRequest="250" Margin="10">
-                            <Label Text="Events" FontSize="25" TextColor="Green"></Label>
+                        <Frame HeightRequest="250" Margin="10" Padding="20">
+                            <Label Text="Events" FontSize="25" FontFamily="RockWell" TextColor="#71c450"></Label>
                         </Frame>
-                        <Frame HeightRequest="250" Margin="10">
-                            <Label Text="Surveys" FontSize="25" TextColor="Green"></Label>
+                        <Frame HeightRequest="250" Margin="10" Padding="20">
+                            <Label Text="Surveys" FontSize="25" FontFamily="RockWell" TextColor="#71c450"></Label>
                         </Frame>
                     </StackLayout>
                 </ScrollView>
