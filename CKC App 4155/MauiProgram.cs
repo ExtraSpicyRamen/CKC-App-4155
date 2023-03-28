@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CKC_App_4155.ViewModel;
+using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Core.Hosting;
+
 
 namespace CKC_App_4155;
 
@@ -9,6 +12,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.ConfigureSyncfusionCore()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -17,10 +21,16 @@ public static class MauiProgram
                 fonts.AddFont("rockb.ttf", "RockWellBold");
             });
 
+		
+
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+        builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<MainViewModel>();
 
-		return builder.Build();
+        builder.Services.AddTransient<EventDetailPage>();
+        builder.Services.AddTransient<EventDetailViewModel>();
+        return builder.Build();
 	}
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             x:Class="CKC_App_4155.CreateAccount"
+             Shell.NavBarIsVisible="False">
+    <Grid>
+        <StackLayout Margin="20">
+            <StackLayout Margin="0,150,0,10">
+                <Label TextColor="#71c450" FontSize="30" FontFamily="RockWellBold" HorizontalOptions="Center">Cool Kids App</Label>
+                <Label FontSize="15" FontFamily="RockWell" FontAttributes="Italic" Padding="10" HorizontalOptions="Center">Register for the Cool Kids App</Label>
+            </StackLayout>
+            <StackLayout>
+                <Grid>
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Username" HelperText="Enter a username" HorizontalOptions="StartAndExpand" Margin="5">
+                        <Entry Margin="5"></Entry>
+                    </inputLayout:SfTextInputLayout>
+                </Grid>
+
+                <StackLayout Orientation="Horizontal">
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Email" HelperText="Enter your Email" HorizontalOptions="StartAndExpand"  Margin="5">
+                        <Entry Margin="5"></Entry>
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Phone Number" HelperText="Enter your Phone Number" HorizontalOptions="CenterAndExpand"  Margin="5">
+                        <Entry Margin="5,0,0,10" Keyboard="Numeric"></Entry>
+                    </inputLayout:SfTextInputLayout>
+                </StackLayout>
+
+                <Grid Margin="0,20,0,0">
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Password" HelperText="Enter a Password" EnablePasswordVisibilityToggle="True" HorizontalOptions="StartAndExpand"  Margin="5,0,0,10">
+                       <Entry IsPassword="True"></Entry>
+                    </inputLayout:SfTextInputLayout>
+                </Grid>
+
+                <Grid Margin="0,20,0,0">
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Re-enter Password" HelperText="Re-enter your password" EnablePasswordVisibilityToggle="True" HorizontalOptions="StartAndExpand" Margin="5,0,0,10">
+                        <Entry IsPassword="True"></Entry>
+                    </inputLayout:SfTextInputLayout>
+                </Grid>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Register" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
+                <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
+            </StackLayout>
+            
+        </StackLayout>
+    </Grid>
+</ContentPage>

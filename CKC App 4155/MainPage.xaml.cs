@@ -6,6 +6,18 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 	}
+	async void GotoCreateAccount(object sender, EventArgs e)
+	{
+        await Navigation.PushAsync(new CreateAccount());
+    }
+    async void GotoForgotPassword(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ForgotPasswordPage());
+    }
 
+    async void GotoHomePage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new HomePage());
+    }
 }
 
