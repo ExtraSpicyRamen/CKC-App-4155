@@ -1,41 +1,53 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              x:Class="CKC_App_4155.UserSettings"
              Shell.NavBarIsVisible="False">
     <ScrollView>
-        <StackLayout>
-            <Label Text="Profile Settings" FontSize="Large" HorizontalOptions="Center" />
-            <StackLayout Margin="10">
-                <Label Text="Display Name" />
-                <Entry Placeholder="Enter your display name" />
-                <Label Text="Email" />
-                <Entry Placeholder="Enter your email address" />
-                <Label Text="Password" />
-                <Entry Placeholder="Enter your password" IsPassword="True" />
-                <Label Text="Confirm Password" />
-                <Entry Placeholder="Confirm your password" IsPassword="True" />
-
+        <StackLayout Margin="20">
+            <Label Text="Profile Settings" FontSize="30" FontFamily="RockWellBold" TextColor="#71c450" HorizontalOptions="Center" />
+            <StackLayout Margin="10, 20, 0, 10" Spacing="20">
                 <!-- Added Basic Info Section -->
-                <Label Text="Basic Info" FontSize="Medium" Margin="0,20,0,0" />
-                <Label Text="Date of Birth" />
+                <Label Text="Basic Info" FontSize="25" FontFamily="RockWellBold" TextColor="#1e13a3" Margin="0,20,0,0" />
+                <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Display Name" HelperText="Edit your Display Name">
+                        <Entry></Entry>
+                </inputLayout:SfTextInputLayout>
+                <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Email" HelperText="Edit the Email associated with your account">
+                        <Entry></Entry>
+                </inputLayout:SfTextInputLayout>
+                <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Change Password" HelperText="Change Your Password">
+                        <Entry IsPassword="True"></Entry>
+                </inputLayout:SfTextInputLayout>
+                <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Confirm Changed Password">
+                        <Entry></Entry>
+                </inputLayout:SfTextInputLayout>
+
+                <Label Text="Date of Birth" FontFamily="RockWell" FontSize="20" />
                 <DatePicker />
 
                 <!-- Added Profile Picture Section -->
-                <Label Text="Profile Picture" FontSize="Medium" Margin="0,20,0,0" />
+                <Label Text="Profile Picture" FontSize="25" FontFamily="RockWellBold" TextColor="#1e13a3"  Margin="0,20,0,0" />
                 <Image Source="{Binding ProfilePicture}" WidthRequest="100" HeightRequest="100" HorizontalOptions="CenterAndExpand" Aspect="AspectFill" BackgroundColor="#f2f2f2"/>
-                <Button Text="Upload Image" Command="{Binding UploadImageCommand}" Margin="0,10"/>
+                <Button Text="Upload Image" FontSize="15" Command="{Binding UploadImageCommand}" Margin="0,10" BackgroundColor="#1e13ae"/>
 
                 <!-- Added Delete Account Section -->
+                <StackLayout Orientation="Horizontal">
                 <Button Text = "Delete Account"
                         BackgroundColor = "Red"
+                        FontSize="15"
+                        HorizontalOptions="FillAndExpand"
                         Command = "{Binding DeleteAccountCommand}"
-                        Margin = "0,10"/>
+                        Margin = "0,20"/>
 
                 <!-- Save Button -->
                 <Button Text = "Save"
+                        BackgroundColor="#71c450"
+                        FontSize="15"
+                        HorizontalOptions="FillAndExpand"
                         Command = "{Binding SaveCommand}"
                         Margin = "0,20"/>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ScrollView>

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CKC_App_4155.SurveysPage"
@@ -32,7 +31,7 @@
         -->
         <!-- main content -->
         <Grid x:Name="MainContentGrid" BackgroundColor="White">
-            <StackLayout Margin="10,0,0,0" Spacing="20">
+            <StackLayout Margin="10,20,10,0" Spacing="20">
                 <!-- 
                 *This Image tag is meant for the navbar menu but not currently inplemented. Refer to homepage for reference of how it works.
                 
@@ -42,11 +41,23 @@
                     </Image.GestureRecognizers>
                 </Image>
                 -->
-                <Label Text="Surveys" FontSize="50" TextColor="Green"></Label>
-                <Label Text="Active Surveys" FontSize="25" TextColor="Green"></Label>
-                <!-- Temporary solution for clicking will change later -->
-                <Button Text="Test survey" Clicked="GotoSurvey"></Button>
-                <Label Text="Past Surveys" FontSize="25" TextColor="Green"></Label>
+                <Label Text="Surveys" FontSize="50" FontFamily="RockWellBold" TextColor="#71c450" HorizontalOptions="Center"></Label>
+                <Frame BackgroundColor="#eeeeee"
+                   Padding="5">
+                    <StackLayout Margin="10"
+                     Spacing="10">
+                        <Label Text="Active Surveys" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
+                        <!-- Temporary solution for clicking will change later -->
+                        <Button Text="Test Survey" Clicked="GotoSurvey" BackgroundColor="#71c450" Margin="5,15" FontSize="15"></Button>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="#eeeeee"
+                   Padding="5">
+                    <StackLayout Margin="10"
+                     Spacing="10">
+                        <Label Text="Past Surveys" FontFamily="RockWell" FontAttributes="Italic" FontSize="25" TextColor="#1e13a3"></Label>
+                    </StackLayout>
+                </Frame>
             </StackLayout>
         </Grid>
     </Grid>

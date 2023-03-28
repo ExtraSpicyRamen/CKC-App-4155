@@ -5,11 +5,10 @@
              x:Class="CKC_App_4155.CreateSurveyPage"
              Title="CreateSurveyPage"
              Shell.NavBarIsVisible="False">
-    
-    <Grid>
-        <StackLayout Margin="20">
-            <StackLayout Margin="0,0,0,10">
-                <Label TextColor="#71c450" FontSize="30" FontFamily="RockWellBold" HorizontalOptions="Center">Survey Creation</Label>
+
+    <StackLayout Margin="20">
+            <StackLayout Margin="10,0,0,10">
+                <Label TextColor="#71c450" FontSize="30" FontFamily="RockWellBold" HorizontalOptions="Center">Create a Survey</Label>
             </StackLayout>
             <StackLayout>
                 <Grid>
@@ -17,7 +16,7 @@
                     <Entry ></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
-                <Grid Margin="0,10,0,0">
+                <Grid Margin="10,10,0,10">
                     <Picker x:Name="picker" Title="Number of Choices" HorizontalTextAlignment="Center" SelectedIndexChanged="OnPickerSelectedIndexChanged">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:Int16}">
@@ -68,5 +67,5 @@
                 <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
             </StackLayout>
         </StackLayout>
-    </Grid>
+
 </ContentPage>

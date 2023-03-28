@@ -6,18 +6,21 @@
              Shell.NavBarIsVisible="False">
     <Grid>
         <StackLayout Margin="20">
-            <StackLayout Margin="0,0,0,10">
-                <Label TextColor="DarkGreen" FontSize="30" FontFamily="RockWellBold">Surveys</Label>
+            <StackLayout Margin="0,20,0,10">
+                <Label TextColor="#71c450" FontSize="30" FontFamily="RockWellBold">Surveys</Label>
             </StackLayout>
-            <StackLayout RadioButtonGroup.GroupName="surveyChoices" Margin="0,0,0,0" >
-                <Label FontSize="20" FontFamily="RockWell">Survey Title</Label>
-                <RadioButton Content="Choice1"/>
-                <RadioButton Content="Choice2"/>
-                <RadioButton Content="Choice3"/>
-                <RadioButton Content="Choice4"/>
-            </StackLayout>
-            <Button Text="Submit" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15"></Button>
-            <Button Text="Cancel" FontSize="15" BackgroundColor="DarkGreen" Margin="0,10"></Button>
+            <Frame BackgroundColor="#eeeeee"
+                   Padding="5">
+                <StackLayout RadioButtonGroup.GroupName="surveyChoices" Margin="10">
+                    <Label FontSize="20" FontFamily="RockWell" TextColor="#71c450" Margin="10">Survey Title</Label>
+                    <RadioButton Content="Choice1"/>
+                    <RadioButton Content="Choice2"/>
+                    <RadioButton Content="Choice3"/>
+                    <RadioButton Content="Choice4"/>
+                </StackLayout>
+            </Frame>
+            <Button Text="Submit" FontSize="15" BackgroundColor="#71c450" Margin="0,20"></Button>
+            <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" Margin="0,20"></Button>
         </StackLayout>
     </Grid>
 </ContentPage>

@@ -6,7 +6,7 @@
              Shell.NavBarIsVisible="False">
     <Grid>
         <StackLayout Margin="20">
-            <StackLayout Margin="0,150,0,10">
+            <StackLayout Margin="0,20,0,10">
                 <Label TextColor="#71c450" FontSize="30" FontFamily="RockWellBold" HorizontalOptions="Center">Cool Kids App</Label>
                 <Label FontSize="15" FontFamily="RockWell" FontAttributes="Italic" Padding="10" HorizontalOptions="Center">Register for the Cool Kids App</Label>
             </StackLayout>

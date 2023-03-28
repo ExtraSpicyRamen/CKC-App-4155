@@ -3,42 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CKC_App_4155.MainPage"
              xmlns:viewmodel="clr-namespace:CKC_App_4155.ViewModel"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              x:DataType="viewmodel:MainViewModel"
             Shell.NavBarIsVisible="False">
 
     <Grid>
         <StackLayout Margin="20">
             <StackLayout Margin="0,150,0,30">
-                <Label TextColor="DarkGreen" FontSize="30" FontFamily="RockWellBold">Cool Kids Campaign</Label>
-                <Label FontSize="15" FontFamily="RockWell" >Sign in to Continue</Label>
+                <Image Source="ethan_logo_c.png" MaximumHeightRequest="300" MaximumWidthRequest="300" />
+                <Label FontSize="15" FontFamily="RockWell" FontAttributes="Italic" HorizontalOptions="Center" >Sign in to Continue</Label>
             </StackLayout>
             <StackLayout>
                 <Grid>
-                    <Frame BorderColor="Black" CornerRadius="0"></Frame>
-                    <Entry PlaceholderColor="black" Placeholder="Username"></Entry>
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Username" HelperText="Enter your username or email" HorizontalOptions="StartAndExpand" Margin="5">
+                        <Entry ></Entry>
+                    </inputLayout:SfTextInputLayout>
                 </Grid>
                 <Grid Margin="0,20,0,0">
-                    <Frame BorderColor="Black" CornerRadius="0"></Frame>
-                    <Entry PlaceholderColor="black" IsPassword="True" Placeholder="Password"></Entry>
+                    <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Password" EnablePasswordVisibilityToggle="True" HorizontalOptions="StartAndExpand" Margin="5">
+                        <Entry IsPassword="True" ></Entry>
+                    </inputLayout:SfTextInputLayout>
                 </Grid>
             </StackLayout>
-            <Button Text="Sign in" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15" Clicked="GotoHomePage">
+            <Button Text="Sign in" FontSize="15" BackgroundColor="#71c450" Margin="5,15" Clicked="GotoHomePage">
             </Button>
             <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <Label Text="Forgot Password?" FontFamily="RockWellBold" HorizontalOptions="StartAndExpand">
-                    
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GotoForgotPassword"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
                 </Label>
                 <Label Text="Register" FontFamily="RockWellBold" HorizontalOptions="EndAndExpand">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GotoForgotPassword"></TapGestureRecognizer>
+                        <TapGestureRecognizer Tapped="GotoCreateAccount"></TapGestureRecognizer>
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>
 
         </StackLayout>
-       
+
     </Grid>
 
-   
+
 
 </ContentPage>
