@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CKC_App_4155.UserSettings"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Profile Settings" FontSize="Large" HorizontalOptions="Center" />
+            <StackLayout Margin="10">
+                <Label Text="Display Name" />
+                <Entry Placeholder="Enter your display name" />
+                <Label Text="Email" />
+                <Entry Placeholder="Enter your email address" />
+                <Label Text="Password" />
+                <Entry Placeholder="Enter your password" IsPassword="True" />
+                <Label Text="Confirm Password" />
+                <Entry Placeholder="Confirm your password" IsPassword="True" />
+
+                <!-- Added Basic Info Section -->
+                <Label Text="Basic Info" FontSize="Medium" Margin="0,20,0,0" />
+                <Label Text="Date of Birth" />
+                <DatePicker />
+
+                <!-- Added Profile Picture Section -->
+                <Label Text="Profile Picture" FontSize="Medium" Margin="0,20,0,0" />
+                <Image Source="{Binding ProfilePicture}" WidthRequest="100" HeightRequest="100" HorizontalOptions="CenterAndExpand" Aspect="AspectFill" BackgroundColor="#f2f2f2"/>
+                <Button Text="Upload Image" Command="{Binding UploadImageCommand}" Margin="0,10"/>
+
+                <!-- Added Delete Account Section -->
+                <Button Text = "Delete Account"
+                        BackgroundColor = "Red"
+                        Command = "{Binding DeleteAccountCommand}"
+                        Margin = "0,10"/>
+
+                <!-- Save Button -->
+                <Button Text = "Save"
+                        Command = "{Binding SaveCommand}"
+                        Margin = "0,20"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
