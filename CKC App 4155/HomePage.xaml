@@ -23,9 +23,17 @@
                         <TapGestureRecognizer Tapped="GotoSurveys"></TapGestureRecognizer>
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="Calendar" TextColor="White" FontFamily="RockWell" FontSize="20"></Label>
+                <Label Text="Calendar" TextColor="White" FontFamily="RockWell" FontSize="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GotoCalendar"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
                 <Label Text="Messages" TextColor="White" FontFamily="RockWell" FontSize="20"></Label>
-                <Label Text="Settings" TextColor="White" FontFamily="RockWell" FontSize="20"></Label>
+                <Label Text="Settings" TextColor="White" FontFamily="RockWell" FontSize="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GotoSettings"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
             </VerticalStackLayout>
             <VerticalStackLayout Margin="25,0,0,0" VerticalOptions="End">
                 <Image Source="ethan_the_kid_c.png" MaximumHeightRequest="200" MaximumWidthRequest="200" HorizontalOptions="Start"/>

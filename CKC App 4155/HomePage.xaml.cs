@@ -27,4 +27,12 @@ public partial class HomePage : ContentPage
     {
         await Navigation.PushAsync(new SurveysPage());
     }
+    async void GotoSettings(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new UserSettings());
+    }
+    async void GotoCalendar(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Calendar());
+    }
 }
