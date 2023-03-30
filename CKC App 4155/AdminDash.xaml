@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              x:Class="CKC_App_4155.AdminDash"
              Title="AdminDash"
              xmlns:viewmodel="clr-namespace:CKC_App_4155.ViewModel"
              x:DataType="viewmodel:AdminDashViewModel"
              Shell.NavBarIsVisible="False">
     <Grid>
-        <StackLayout Margin="0,130,0,30" Padding="50">
-            <Label TextColor="DarkGreen" FontSize="30" FontFamily="RockWellBold">Admin Dashboard</Label>
-        </StackLayout>
-        
-        <StackLayout Margin="0,200,0,30" Padding="50">
+        <StackLayout Margin="20">
+            <Label FontSize="30" FontFamily="RockWellBold" TextColor="#71c450" HorizontalOptions="Center">Admin Dashboard</Label>
+
+
+            <StackLayout Margin="10,20,0,10">
             <Grid>
-                <Button Text="Create User Accounts" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15" Clicked="GotoCreateAccount">
+                    <Button Text="Create User Accounts" FontSize="15" BackgroundColor="#71c450" Margin="0,20" Clicked="GotoCreateAccount">
                 </Button>
             </Grid>
             <Grid Margin="0,20,0,0">
-                <Button Text="Edit / View User Accounts" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15">
+                    <Button Text="Edit / View User Accounts" FontSize="15" BackgroundColor="#71c450" Margin="0,20">
                 </Button>
             </Grid>
             <Grid Margin="0,20,0,0">
-                <Button Text="Create Event" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15" Clicked="GotoAddEvent">
+                    <Button Text="Create Event" FontSize="15" BackgroundColor="#71c450" Margin="0,20" Clicked="GotoAddEvent">
                 </Button>
             </Grid>
             <Grid Margin="0,20,0,0">
-                <Button Text="Create Survey" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15" Clicked="GotoCreateSurvey">
+                    <Button Text="Create Survey" FontSize="15" BackgroundColor="#71c450" Margin="0,20" Clicked="GotoCreateSurvey">
                 </Button>
             </Grid>
             <Grid Margin="0,20,0,0">
-                <Button Text="Edit / View Surveys" FontSize="15" BackgroundColor="DarkGreen" Margin="0,15">
+                    <Button Text="Edit / View Surveys" FontSize="15" BackgroundColor="#71c450" Margin="0,20">
                 </Button>
             </Grid>
+        </StackLayout>
         </StackLayout>
 
     </Grid>
