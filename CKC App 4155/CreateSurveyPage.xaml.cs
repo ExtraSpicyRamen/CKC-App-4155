@@ -1,17 +1,21 @@
+using CKC_App_4155.objects;
+
 namespace CKC_App_4155;
 
 public partial class CreateSurveyPage : ContentPage
 {
-	public CreateSurveyPage()
+    int numChoices = 0;
+    Survey survey = new Survey();
+    public CreateSurveyPage()
 	{
 		InitializeComponent();
-        
     }
    
     void OnPickerSelectedIndexChanged (object sender, EventArgs e)
     {
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
+        numChoices = selectedIndex;
         CreateSurvey_Text.IsVisible = true;
         if (selectedIndex == 0)
         {
@@ -76,5 +80,9 @@ public partial class CreateSurveyPage : ContentPage
             entry_5.IsVisible = false;
             entry_6.IsVisible = false;
         }
+    }
+    void submitClicked(object sender, EventArgs e)
+    {
+        
     }
 }
