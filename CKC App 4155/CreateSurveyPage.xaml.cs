@@ -81,6 +81,10 @@ public partial class CreateSurveyPage : ContentPage
             entry_6.IsVisible = false;
         }
     }
+    void OnEntryCompleted(object sender, EventArgs e)
+    {
+        string text = ((Entry)sender).Text;
+    }
     void submitClicked(object sender, EventArgs e)
     {
         

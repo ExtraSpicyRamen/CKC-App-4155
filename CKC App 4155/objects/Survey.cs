@@ -12,6 +12,7 @@ namespace CKC_App_4155.objects
         private string title;
         private string question;
         private string a, b, c, d, e, f = "";
+        private int countA, countB, countC, countD, countE, countF;
         public Survey() { } 
         public Survey(int id, string title,string question, string choice_a, string choice_b, string choice_c, string choice_d, string choice_e, string choice_f)
         {
@@ -34,6 +35,12 @@ namespace CKC_App_4155.objects
         public string getD() { return d; }
         public string getE() { return e; }
         public string getF() { return f; }
+        public int getCountA() { return countA; }
+        public int getCountB() { return countB; }
+        public int getCountC() { return countC; }
+        public int getCountD() { return countD; }
+        public int getCountE() { return countE; }
+        public int getCountF() { return countF; }
         public void setId(int id) { this.id = id; }
         public void setTitle(string title) {  this.title = title; }
         public void setQuestion(string question) {  this.question = question; }
@@ -43,5 +50,11 @@ namespace CKC_App_4155.objects
         public void setD(string d) {  this.d = d; }
         public void setE(string e) {  this.e = e; }
         public void setF(string f) {  this.f = f; }
+        public void setCountA(int countA) { this.countA = countA; }
+        public void setCountB(int countB) { this.countB = countB; }
+        public void setCountC(int countC) { this.countC = countC; }
+        public void setCountD(int countD) { this.countD = countD; }
+        public void setCountE(int countE) { this.countE = countE; }
+        public void setCountF(int countF) { this.countF = countF; }
     }
 }
