@@ -10,7 +10,6 @@ namespace CKC_App_4155.objects
     {
         private int id;
         private string title;
-        private string question;
         private string a, b, c, d, e, f = "";
         private int countA, countB, countC, countD, countE, countF;
         public Survey() { } 
@@ -18,7 +17,6 @@ namespace CKC_App_4155.objects
         {
             this.id = id;
             this.title = title;
-            this.question = question;
             this.a = choice_a;
             this.b = choice_b;
             this.c = choice_c;
@@ -28,7 +26,6 @@ namespace CKC_App_4155.objects
         }
         public int getId() { return id; }
         public string getTitle() { return title; }
-        public string getQuestion() { return question; }
         public string getA() { return a; }
         public string getB() { return b; }
         public string getC() { return c; }
@@ -43,7 +40,6 @@ namespace CKC_App_4155.objects
         public int getCountF() { return countF; }
         public void setId(int id) { this.id = id; }
         public void setTitle(string title) {  this.title = title; }
-        public void setQuestion(string question) {  this.question = question; }
         public void setA(string a) {  this.a = a; }
         public void setB(string b) {  this.b = b; }
         public void setC(string c) {  this.c = c; }
