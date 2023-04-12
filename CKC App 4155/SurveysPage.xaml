@@ -13,7 +13,16 @@
                      Spacing="10">
                         <Label Text="Active Surveys" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
                         <!-- Temporary solution for clicking will change later -->
-                        <Button Text="Test Survey" Clicked="GotoSurvey" BackgroundColor="#71c450" Margin="5,15" FontSize="15"></Button>
+                        <ListView x:Name="listSurveys">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <!---Biding doesn't recognize the path to get the titles from the list of objects-->
+                                        <Label Text="{Binding Title}"></Label>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackLayout>
                 </Frame>
                 <Frame BackgroundColor="#eeeeee"

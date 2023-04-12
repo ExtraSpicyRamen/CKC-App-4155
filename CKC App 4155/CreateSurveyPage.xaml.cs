@@ -1,4 +1,4 @@
-using CKC_App_4155.objects;
+using CKC_App_4155.Objects;
 using System.Diagnostics;
 
 namespace CKC_App_4155;
@@ -113,10 +113,13 @@ public partial class CreateSurveyPage : ContentPage
         survey.setF(((Entry)sender).Text);
     }
     //end of temporary/permanent
-    void submitClicked(object sender, EventArgs e)
+    async void submitClicked(object sender, EventArgs e)
     {
         //Checks to make sure object has right values and prints to the output window
-        String test = survey.getTitle() + " " + survey.getA() + " " + survey.getB();
-        Debug.WriteLine(test);
+        var navigationParameter = new Dictionary<string, object>
+        {
+            { "Thing", survey }
+        };
+        await Shell.Current.GoToAsync($"{nameof(SurveysPage)}", navigationParameter);
     }
 }

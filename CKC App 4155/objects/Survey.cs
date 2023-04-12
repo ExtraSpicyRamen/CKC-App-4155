@@ -1,22 +1,23 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CKC_App_4155.objects
+namespace CKC_App_4155.Objects
 {
-    class Survey
+    public class Survey
     {
-        private int id;
-        private string title;
-        private string a, b, c, d, e, f = "";
-        private int countA, countB, countC, countD, countE, countF;
+        public int Id;
+        public string Title;
+        public string a, b, c, d, e, f = "";
+        public int countA, countB, countC, countD, countE, countF;
         public Survey() { } 
-        public Survey(int id, string title,string question, string choice_a, string choice_b, string choice_c, string choice_d, string choice_e, string choice_f)
+        public Survey(int id, string title, string choice_a, string choice_b, string choice_c, string choice_d, string choice_e, string choice_f)
         {
-            this.id = id;
-            this.title = title;
+            this.Id = id;
+            this.Title = title;
             this.a = choice_a;
             this.b = choice_b;
             this.c = choice_c;
@@ -24,8 +25,8 @@ namespace CKC_App_4155.objects
             this.e = choice_e;
             this.f = choice_f;
         }
-        public int getId() { return id; }
-        public string getTitle() { return title; }
+        public int getId() { return Id; }
+        public string getTitle() { return Title; }
         public string getA() { return a; }
         public string getB() { return b; }
         public string getC() { return c; }
@@ -38,8 +39,8 @@ namespace CKC_App_4155.objects
         public int getCountD() { return countD; }
         public int getCountE() { return countE; }
         public int getCountF() { return countF; }
-        public void setId(int id) { this.id = id; }
-        public void setTitle(string title) {  this.title = title; }
+        public void setId(int id) { this.Id = id; }
+        public void setTitle(string title) {  this.Title = title; }
         public void setA(string a) {  this.a = a; }
         public void setB(string b) {  this.b = b; }
         public void setC(string c) {  this.c = c; }
