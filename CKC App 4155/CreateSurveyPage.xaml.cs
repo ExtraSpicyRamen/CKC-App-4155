@@ -118,7 +118,7 @@ public partial class CreateSurveyPage : ContentPage
         //Checks to make sure object has right values and prints to the output window
         var navigationParameter = new Dictionary<string, object>
         {
-            { "Thing", survey }
+            { "NewSurvey", survey }
         };
         await Shell.Current.GoToAsync($"{nameof(SurveysPage)}", navigationParameter);
     }

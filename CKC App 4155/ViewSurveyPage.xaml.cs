@@ -1,9 +1,24 @@
-namespace CKC_App_4155;
+using CKC_App_4155.Objects;
+using static System.Net.Mime.MediaTypeNames;
 
+namespace CKC_App_4155;
+[QueryProperty(nameof(PickedSurvey), "PickedSurvey")]
 public partial class ViewSurveyPage : ContentPage
 {
-	public ViewSurveyPage()
+    Survey currSurvey;
+    public Survey PickedSurvey
+    {
+        get => currSurvey;
+        set
+        {
+            currSurvey = value;
+            OnPropertyChanged(nameof(currSurvey));
+            surTitle.Text = currSurvey.getTitle();
+        }
+    }
+    public ViewSurveyPage()
 	{
-		InitializeComponent();
+        currSurvey = new Survey();
+        InitializeComponent();
 	}
 }

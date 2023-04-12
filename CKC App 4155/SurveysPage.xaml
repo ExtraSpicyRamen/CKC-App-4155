@@ -6,6 +6,7 @@
         <!-- main content -->
         <Grid x:Name="MainContentGrid" BackgroundColor="White">
             <StackLayout Margin="10,20,10,0" Spacing="20">
+                <Button Text="Create Survey" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="CreateSurvey"></Button>
                 <Label Text="Surveys" FontSize="50" FontFamily="RockWellBold" TextColor="#71c450" HorizontalOptions="Center"></Label>
                 <Frame BackgroundColor="#eeeeee"
                    Padding="5">
@@ -13,11 +14,11 @@
                      Spacing="10">
                         <Label Text="Active Surveys" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
                         <!-- Temporary solution for clicking will change later -->
-                        <ListView x:Name="listSurveys">
+                        <ListView x:Name="listSurveys" ItemSelected="listSurveys_ItemSelected">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <!---Biding doesn't recognize the path to get the titles from the list of objects-->
+                                        <!---Binding doesn't recognize the path to get the titles from the list of objects-->
                                         <Label Text="{Binding Title}"></Label>
                                     </ViewCell>
                                 </DataTemplate>

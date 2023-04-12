@@ -7,17 +7,28 @@ using System.Threading.Tasks;
 
 namespace CKC_App_4155.Objects
 {
-    public class Survey
+    public class Survey : ObservableObject
     {
-        public int Id;
-        public string Title;
+        public int id;
+        public string title;
+        public string Title {
+            get
+            {
+                return this.title;
+            }
+            set
+            {
+                SetProperty(ref title, value);
+
+            }
+        }
         public string a, b, c, d, e, f = "";
         public int countA, countB, countC, countD, countE, countF;
         public Survey() { } 
         public Survey(int id, string title, string choice_a, string choice_b, string choice_c, string choice_d, string choice_e, string choice_f)
         {
-            this.Id = id;
-            this.Title = title;
+            this.id = id;
+            this.title = title;
             this.a = choice_a;
             this.b = choice_b;
             this.c = choice_c;
@@ -25,8 +36,8 @@ namespace CKC_App_4155.Objects
             this.e = choice_e;
             this.f = choice_f;
         }
-        public int getId() { return Id; }
-        public string getTitle() { return Title; }
+        public int getId() { return id; }
+        public string getTitle() { return title; }
         public string getA() { return a; }
         public string getB() { return b; }
         public string getC() { return c; }
@@ -39,8 +50,8 @@ namespace CKC_App_4155.Objects
         public int getCountD() { return countD; }
         public int getCountE() { return countE; }
         public int getCountF() { return countF; }
-        public void setId(int id) { this.Id = id; }
-        public void setTitle(string title) {  this.Title = title; }
+        public void setId(int id) { this.id = id; }
+        public void setTitle(string title) {  this.title = title; }
         public void setA(string a) {  this.a = a; }
         public void setB(string b) {  this.b = b; }
         public void setC(string c) {  this.c = c; }

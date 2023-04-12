@@ -12,7 +12,7 @@
             <Frame BackgroundColor="#eeeeee"
                    Padding="5">
                 <StackLayout RadioButtonGroup.GroupName="surveyChoices" Margin="10">
-                    <Label FontSize="20" FontFamily="RockWell" TextColor="#71c450" Margin="10">Survey Title</Label>
+                    <Label FontSize="20" FontFamily="RockWell" TextColor="#71c450" Margin="10" x:Name="surTitle">Survey Title</Label>
                     <RadioButton Content="Choice1"/>
                     <RadioButton Content="Choice2"/>
                     <RadioButton Content="Choice3"/>

@@ -8,5 +8,6 @@ public partial class AppShell : Shell
 
 		Routing.RegisterRoute(nameof(EventDetailPage), typeof(EventDetailPage));
 		Routing.RegisterRoute(nameof(SurveysPage), typeof(SurveysPage));
-	}
+        Routing.RegisterRoute(nameof(ViewSurveyPage), typeof(ViewSurveyPage));
+    }
 }
