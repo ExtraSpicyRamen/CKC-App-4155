@@ -13,10 +13,12 @@
                    Padding="5">
                 <StackLayout RadioButtonGroup.GroupName="surveyChoices" Margin="10">
                     <Label FontSize="20" FontFamily="RockWell" TextColor="#71c450" Margin="10" x:Name="surTitle">Survey Title</Label>
-                    <RadioButton Content="Choice1"/>
-                    <RadioButton Content="Choice2"/>
-                    <RadioButton Content="Choice3"/>
-                    <RadioButton Content="Choice4"/>
+                    <RadioButton Content="Choice1" x:Name="rad1" IsVisible="false" CheckedChanged="CheckedChanged" IsEnabled="False" IsChecked="False"/>
+                    <RadioButton Content="Choice2" x:Name="rad2" IsVisible="false" CheckedChanged="CheckedChanged" IsEnabled="False" IsChecked="False"/>
+                    <RadioButton Content="Choice3" x:Name="rad3" IsVisible="false" CheckedChanged="CheckedChanged" IsEnabled="False" IsChecked="False"/>
+                    <RadioButton Content="Choice4" x:Name="rad4" IsVisible="false" CheckedChanged="CheckedChanged" IsEnabled="False" IsChecked="False"/>
+                    <RadioButton Content="Choice5" x:Name="rad5" IsVisible="false" CheckedChanged="CheckedChanged" IsEnabled="False" IsChecked="False"/>
+                    <RadioButton Content="Choice6" x:Name="rad6" IsVisible="false" CheckedChanged="CheckedChanged" IsEnabled="False" IsChecked="False"/>
                 </StackLayout>
             </Frame>
             <Button Text="Submit" FontSize="15" BackgroundColor="#71c450" Margin="0,20"></Button>

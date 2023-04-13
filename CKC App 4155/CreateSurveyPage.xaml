@@ -10,10 +10,11 @@
             <StackLayout Margin="10,0,0,10">
                 <Label TextColor="#71c450" FontSize="30" FontFamily="RockWellBold" HorizontalOptions="Center">Create a Survey</Label>
             </StackLayout>
+        <ScrollView VerticalOptions="FillAndExpand">
             <StackLayout>
                 <Grid>
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Survey Title" HelperText="Enter a Survey Title" HorizontalOptions="StartAndExpand" Margin="5">
-                    <Entry TextChanged="OnEntryCompletedTitle"></Entry>
+                        <Entry TextChanged="OnEntryCompletedTitle"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
                 <Grid Margin="10,10,0,10">
@@ -33,35 +34,36 @@
                 <Label TextColor="#71c450" FontSize="30" FontFamily="RockWellBold" Margin="0,10,0,0" IsVisible="false" x:Name="CreateSurvey_Text">Enter your Choices</Label>
                 <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_1">
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Option 1" HorizontalOptions="StartAndExpand" Margin="5" Padding="5">
-                    <Entry TextChanged="OnEntryCompletedA"></Entry>
+                        <Entry TextChanged="OnEntryCompletedA"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
                 <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_2">
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Option 2" HorizontalOptions="StartAndExpand" Margin="5" Padding="5">
-                    <Entry TextChanged="OnEntryCompletedB"></Entry>
+                        <Entry TextChanged="OnEntryCompletedB"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
                 <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_3">
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Option 3" HorizontalOptions="StartAndExpand" Margin="5" Padding="5">
-                    <Entry TextChanged="OnEntryCompletedC"></Entry>
+                        <Entry TextChanged="OnEntryCompletedC"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
                 <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_4">
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Option 4" HorizontalOptions="StartAndExpand" Margin="5" Padding="5">
-                    <Entry TextChanged="OnEntryCompletedD"></Entry>
+                        <Entry TextChanged="OnEntryCompletedD"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
                 <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_5">
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Option 5" HorizontalOptions="StartAndExpand" Margin="5" Padding="5">
-                    <Entry TextChanged="OnEntryCompletedE"></Entry>
+                        <Entry TextChanged="OnEntryCompletedE"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
                 <Grid Margin="0,10,0,0" IsVisible="false" x:Name="entry_6">
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Option 6" HorizontalOptions="StartAndExpand" Margin="5" Padding="5">
-                    <Entry TextChanged="OnEntryCompletedF"></Entry>
+                        <Entry TextChanged="OnEntryCompletedF"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
             </StackLayout>
+        </ScrollView>
             <StackLayout Orientation="Horizontal">
                 <Button Text="Create" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="submitClicked"></Button>
                 <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>

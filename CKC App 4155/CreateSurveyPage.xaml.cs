@@ -27,6 +27,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = false;
             entry_5.IsVisible = false;
             entry_6.IsVisible = false;
+            survey.setNumChoices(1);
         }
         else if (selectedIndex == 1)
         {
@@ -36,6 +37,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = false;
             entry_5.IsVisible = false;
             entry_6.IsVisible = false;
+            survey.setNumChoices(2);
         }
         else if(selectedIndex == 2)
         {
@@ -45,6 +47,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = false;
             entry_5.IsVisible = false;
             entry_6.IsVisible = false;
+            survey.setNumChoices(3);
         }
         else if (selectedIndex == 3)
         {
@@ -54,6 +57,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = true;
             entry_5.IsVisible = false;
             entry_6.IsVisible = false;
+            survey.setNumChoices(4);
         }
         else if (selectedIndex == 4)
         {
@@ -63,6 +67,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = true;
             entry_5.IsVisible = true;
             entry_6.IsVisible = false;
+            survey.setNumChoices(5);
         }
         else if (selectedIndex == 5)
         {
@@ -72,6 +77,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = true;
             entry_5.IsVisible = true;
             entry_6.IsVisible = true;
+            survey.setNumChoices(6);
         }
         else
         {
@@ -81,6 +87,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = false;
             entry_5.IsVisible = false;
             entry_6.IsVisible = false;
+            survey.setNumChoices(0);
         }
     }
     //Temporary/Permanent until we figure out a way to find which entry to being accessed

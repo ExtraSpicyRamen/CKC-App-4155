@@ -10,6 +10,7 @@ namespace CKC_App_4155.Objects
     public class Survey : ObservableObject
     {
         public int id;
+        public int numChoices;
         public string title;
         public string Title {
             get
@@ -24,10 +25,11 @@ namespace CKC_App_4155.Objects
         }
         public string a, b, c, d, e, f = "";
         public int countA, countB, countC, countD, countE, countF;
-        public Survey() { } 
-        public Survey(int id, string title, string choice_a, string choice_b, string choice_c, string choice_d, string choice_e, string choice_f)
+        public Survey() { }
+        public Survey(int id, int numChoice, string title, string choice_a, string choice_b, string choice_c, string choice_d, string choice_e, string choice_f)
         {
             this.id = id;
+            this.numChoices = numChoice;
             this.title = title;
             this.a = choice_a;
             this.b = choice_b;
@@ -37,6 +39,7 @@ namespace CKC_App_4155.Objects
             this.f = choice_f;
         }
         public int getId() { return id; }
+        public int getNumChoices() { return numChoices;}
         public string getTitle() { return title; }
         public string getA() { return a; }
         public string getB() { return b; }
@@ -51,6 +54,7 @@ namespace CKC_App_4155.Objects
         public int getCountE() { return countE; }
         public int getCountF() { return countF; }
         public void setId(int id) { this.id = id; }
+        public void setNumChoices(int num) { this.numChoices = num; }
         public void setTitle(string title) {  this.title = title; }
         public void setA(string a) {  this.a = a; }
         public void setB(string b) {  this.b = b; }
