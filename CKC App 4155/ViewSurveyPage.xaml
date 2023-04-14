@@ -22,7 +22,7 @@
                 </StackLayout>
             </Frame>
             <Button Text="Submit" FontSize="15" BackgroundColor="#71c450" Margin="0,20" Clicked="SubmitVote"></Button>
-            <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" Margin="0,20"></Button>
+            <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" Margin="0,20" Clicked="GoBack"></Button>
             <Button Text="View Results" FontSize="15" BackgroundColor="#71c450" Margin="0,20" Clicked="ViewSurvey"></Button>
         </StackLayout>
     </Grid>

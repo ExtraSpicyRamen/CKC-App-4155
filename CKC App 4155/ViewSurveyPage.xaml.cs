@@ -178,6 +178,7 @@ public partial class ViewSurveyPage : ContentPage
             DisplayAlert("Error", "Please Pick a Choice before submitting", "Close");
         }
     }
+    //Sends survey over to SurveyResultsPage to view results of the current survey
     private async void ViewSurvey(object sender, EventArgs e)
     {
         if (currSurvey != null)
@@ -189,5 +190,10 @@ public partial class ViewSurveyPage : ContentPage
             };
             await Shell.Current.GoToAsync($"{nameof(SurveyResultsPage)}", navigationParameter);
         }
+    }
+    //Goes back to previous page 
+    private async void GoBack(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"..");
     }
 }

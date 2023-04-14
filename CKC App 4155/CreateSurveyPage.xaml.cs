@@ -10,9 +10,10 @@ public partial class CreateSurveyPage : ContentPage
     public CreateSurveyPage()
 	{
 		InitializeComponent();
+        //Can randomize IDs later
         survey.setId(1); //Temporary until database
     }
-   
+   //When the number of options is chosen than this event handler is launched and sets proper frontend elements and sets backend elements as well
     void OnPickerSelectedIndexChanged (object sender, EventArgs e)
     {
         var picker = (Picker)sender;
@@ -91,6 +92,7 @@ public partial class CreateSurveyPage : ContentPage
         }
     }
     //Temporary/Permanent until we figure out a way to find which entry to being accessed
+    //All the methods below starting with OnEntry.. detects when the entry has text entered and sets the proper parts of the survey
     void OnEntryCompletedTitle(object sender, EventArgs e)
     {
         survey.setTitle(((Entry)sender).Text);
@@ -127,6 +129,12 @@ public partial class CreateSurveyPage : ContentPage
         {
             { "NewSurvey", survey }
         };
-        await Shell.Current.GoToAsync($"{nameof(SurveysPage)}", navigationParameter);
+        //Sends object to previous page (SurveysPage)
+        await Shell.Current.GoToAsync($"..", navigationParameter);
+    }
+    //Goes back to previous page
+    private async void GoBack(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("..");
     }
 }

@@ -29,7 +29,7 @@
                     <Label FontSize="15" FontFamily="RockWell" Margin="0,0,0,0" x:Name="choice6" IsVisible="False">Choice 6 -</Label>
                 </Grid>
             </StackLayout>
-            <Button Text="Back" FontSize="15" BackgroundColor="#71c450" Margin="0,10"></Button>
+            <Button Text="Back" FontSize="15" BackgroundColor="#71c450" Margin="0,10" Clicked="GoBack"></Button>
         </StackLayout>
     </Grid>
 </ContentPage>

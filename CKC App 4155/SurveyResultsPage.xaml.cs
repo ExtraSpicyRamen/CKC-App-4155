@@ -23,6 +23,7 @@ public partial class SurveyResultsPage : ContentPage
         currSurvey = new Survey();
 		InitializeComponent();
 	}
+    //Takes in number of options and properly sets labels to display the correct amount fo votes and options that the survey had
     public void NumOptions(int numChoices)
     {
         if (currSurvey != null)
@@ -88,5 +89,11 @@ public partial class SurveyResultsPage : ContentPage
                     break;
             }
         }
+    }
+    //Sends the user back to previous page
+    private async void GoBack(object sender, EventArgs e)
+    {
+        //If you are using shell navigation than use this line to go back pages so that the system doesn't add a new iteration of the page.
+        await Shell.Current.GoToAsync("..");
     }
 }
