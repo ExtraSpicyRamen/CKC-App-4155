@@ -11,7 +11,7 @@
             </StackLayout>
             <Frame BackgroundColor="#eeeeee"
                    Padding="5">
-                <StackLayout RadioButtonGroup.GroupName="surveyChoices" Margin="10">
+                <StackLayout Margin="10">
                     <Label FontSize="20" FontFamily="RockWell" TextColor="#71c450" Margin="10" x:Name="surTitle">Survey Title</Label>
                     <RadioButton Content="Choice1" x:Name="rad1" IsVisible="false" CheckedChanged="CheckedChanged" IsEnabled="False" IsChecked="False"/>
                     <RadioButton Content="Choice2" x:Name="rad2" IsVisible="false" CheckedChanged="CheckedChanged" IsEnabled="False" IsChecked="False"/>
@@ -21,8 +21,9 @@
                     <RadioButton Content="Choice6" x:Name="rad6" IsVisible="false" CheckedChanged="CheckedChanged" IsEnabled="False" IsChecked="False"/>
                 </StackLayout>
             </Frame>
-            <Button Text="Submit" FontSize="15" BackgroundColor="#71c450" Margin="0,20"></Button>
+            <Button Text="Submit" FontSize="15" BackgroundColor="#71c450" Margin="0,20" Clicked="SubmitVote"></Button>
             <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" Margin="0,20"></Button>
+            <Button Text="View Results" FontSize="15" BackgroundColor="#71c450" Margin="0,20" Clicked="ViewSurvey"></Button>
         </StackLayout>
     </Grid>
 </ContentPage>

@@ -3,18 +3,22 @@ using System.Linq.Expressions;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace CKC_App_4155;
+//Grabs object sent from SurveysPage
 [QueryProperty(nameof(PickedSurvey), "PickedSurvey")]
 public partial class ViewSurveyPage : ContentPage
 {
     Survey currSurvey;
-    public string sel;
+    RadioButton button;
+    //This sets currSurvey to the survey sent through
     public Survey PickedSurvey
     {
         get => currSurvey;
         set
         {
             currSurvey = value;
+            //I don't think this is needed but needs to be tested later
             OnPropertyChanged(nameof(currSurvey));
+            //Sets the title and options and has to be done here so app doesn't crash since this method is activated after ViewSurveryPage constructor
             surTitle.Text = currSurvey.getTitle();
             NumOptions(currSurvey.getNumChoices());
         }
@@ -23,9 +27,9 @@ public partial class ViewSurveyPage : ContentPage
 	{
         //Initializing survey item and sel string
         currSurvey = new Survey();
-        sel = "";
         InitializeComponent();
 	}
+    //Checks how many options there and properly sets the view to display right amount and correct choices
     public void NumOptions(int num)
     {
         switch (num)
@@ -129,20 +133,61 @@ public partial class ViewSurveyPage : ContentPage
                 break;
         }
     }
-    //View results of current survey being looked at
-    public void ViewResults()
-    {
-        //logic for viewing
-    }
-    public void SubmitVote()
-    {
-        //logic for submitting
-    }
-    //Method will change "sel" to match value currently being selected
+    //Method will set button to current button being pressed
     private void CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-        RadioButton button = (RadioButton)sender;
-        sel = (string) button.Content;
+        button = (RadioButton)sender;
         //Figure out how to detect which option was picked and increment its count
+    }
+    //Detects Which item got the vote and adds it to the the list
+    private void SubmitVote(object sender, EventArgs e)
+    {
+        if (button != null)
+        {
+            if (button.Equals(rad1))
+            {
+                currSurvey.setCountA(currSurvey.getCountA() + 1);
+            }
+            else if (button.Equals(rad2))
+            {
+                currSurvey.setCountB(currSurvey.getCountB() + 1);
+            }
+            else if (button.Equals(rad3))
+            {
+                currSurvey.setCountC(currSurvey.getCountC() + 1);
+            }
+            else if (button.Equals(rad4))
+            {
+                currSurvey.setCountD(currSurvey.getCountD() + 1);
+            }
+            else if (button.Equals(rad5))
+            {
+                currSurvey.setCountE(currSurvey.getCountE() + 1);
+            }
+            else if (button.Equals(rad6))
+            {
+                currSurvey.setCountF(currSurvey.getCountF() + 1);
+            }
+            else
+            {
+                DisplayAlert("Error", "Seems like the choice you made has caused an error. Please choose again.", "Close");
+            }
+        }
+        else if (button == null)
+        {
+            DisplayAlert("Error", "Please Pick a Choice before submitting", "Close");
+        }
+    }
+    private async void ViewSurvey(object sender, EventArgs e)
+    {
+        if (currSurvey != null)
+        {
+            Survey sendOver = currSurvey;
+            var navigationParameter = new Dictionary<string, object>
+            {
+                { "ViewResults", sendOver}
+            };
+            await Shell.Current.GoToAsync($"{nameof(SurveyResultsPage)}", navigationParameter);
+        }
     }
 }

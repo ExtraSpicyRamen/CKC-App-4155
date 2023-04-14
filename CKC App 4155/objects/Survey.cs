@@ -24,7 +24,7 @@ namespace CKC_App_4155.Objects
             }
         }
         public string a, b, c, d, e, f = "";
-        public int countA, countB, countC, countD, countE, countF;
+        public int countA, countB, countC, countD, countE, countF = 0;
         public Survey() { }
         public Survey(int id, int numChoice, string title, string choice_a, string choice_b, string choice_c, string choice_d, string choice_e, string choice_f)
         {
