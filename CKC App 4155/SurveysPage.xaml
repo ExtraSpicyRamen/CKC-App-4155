@@ -3,44 +3,10 @@
              x:Class="CKC_App_4155.SurveysPage"
              Shell.NavBarIsVisible="False">
     <Grid>
-        <!--
-        *Nav bar functionality but not currently implemented. Transfer code from homepage.xml.cs to make it work properly if you need it
-        
-        <Grid x:Name="MenuContainer">
-            <Grid.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#666666" Offset="0.0"></GradientStop>
-                    <GradientStop Color="Green" Offset="1.0"></GradientStop>
-                </LinearGradientBrush>
-            </Grid.Background>
-            <Grid.GestureRecognizers>
-                <TapGestureRecognizer Tapped="GridArea_Tapped"></TapGestureRecognizer>
-            </Grid.GestureRecognizers>
-            <VerticalStackLayout Margin="25,20,0,0" Spacing="20">
-                <Label Text="Menu" TextColor="White" FontSize="35"></Label>
-                <Label Text="Surveys" TextColor="White" FontSize="20">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GotoSurveys"></TapGestureRecognizer>
-                    </Label.GestureRecognizers>
-                </Label>
-                <Label Text="Calendar" TextColor="White" FontSize="20"></Label>
-                <Label Text="Messages" TextColor="White" FontSize="20"></Label>
-                <Label Text="Settings" TextColor="White" FontSize="20"></Label>
-            </VerticalStackLayout>
-        </Grid>
-        -->
         <!-- main content -->
         <Grid x:Name="MainContentGrid" BackgroundColor="White">
             <StackLayout Margin="10,20,10,0" Spacing="20">
-                <!-- 
-                *This Image tag is meant for the navbar menu but not currently inplemented. Refer to homepage for reference of how it works.
-                
-                <Image VerticalOptions="Start" Source="burger_menu.png" WidthRequest="55" HeightRequest="60" HorizontalOptions="Start">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Menu_Clicked"></TapGestureRecognizer>
-                    </Image.GestureRecognizers>
-                </Image>
-                -->
+                <Button Text="Create Survey" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="CreateSurvey"></Button>
                 <Label Text="Surveys" FontSize="50" FontFamily="RockWellBold" TextColor="#71c450" HorizontalOptions="Center"></Label>
                 <Frame BackgroundColor="#eeeeee"
                    Padding="5">
@@ -48,7 +14,16 @@
                      Spacing="10">
                         <Label Text="Active Surveys" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
                         <!-- Temporary solution for clicking will change later -->
-                        <Button Text="Test Survey" Clicked="GotoSurvey" BackgroundColor="#71c450" Margin="5,15" FontSize="15"></Button>
+                        <ListView x:Name="listSurveys" ItemSelected="listSurveys_ItemSelected">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <!---Binding doesn't recognize the path to get the titles from the list of objects-->
+                                        <Label Text="{Binding Title}"></Label>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackLayout>
                 </Frame>
                 <Frame BackgroundColor="#eeeeee"

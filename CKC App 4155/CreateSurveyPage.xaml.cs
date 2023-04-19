@@ -1,17 +1,24 @@
+using CKC_App_4155.Objects;
+using System.Diagnostics;
+
 namespace CKC_App_4155;
 
 public partial class CreateSurveyPage : ContentPage
 {
-	public CreateSurveyPage()
+    int numChoices = 0;
+    Survey survey = new Survey();
+    public CreateSurveyPage()
 	{
 		InitializeComponent();
-        
+        //Can randomize IDs later
+        survey.setId(1); //Temporary until database
     }
-   
+   //When the number of options is chosen than this event handler is launched and sets proper frontend elements and sets backend elements as well
     void OnPickerSelectedIndexChanged (object sender, EventArgs e)
     {
         var picker = (Picker)sender;
         int selectedIndex = picker.SelectedIndex;
+        numChoices = selectedIndex;
         CreateSurvey_Text.IsVisible = true;
         if (selectedIndex == 0)
         {
@@ -21,6 +28,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = false;
             entry_5.IsVisible = false;
             entry_6.IsVisible = false;
+            survey.setNumChoices(1);
         }
         else if (selectedIndex == 1)
         {
@@ -30,6 +38,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = false;
             entry_5.IsVisible = false;
             entry_6.IsVisible = false;
+            survey.setNumChoices(2);
         }
         else if(selectedIndex == 2)
         {
@@ -39,6 +48,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = false;
             entry_5.IsVisible = false;
             entry_6.IsVisible = false;
+            survey.setNumChoices(3);
         }
         else if (selectedIndex == 3)
         {
@@ -48,6 +58,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = true;
             entry_5.IsVisible = false;
             entry_6.IsVisible = false;
+            survey.setNumChoices(4);
         }
         else if (selectedIndex == 4)
         {
@@ -57,6 +68,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = true;
             entry_5.IsVisible = true;
             entry_6.IsVisible = false;
+            survey.setNumChoices(5);
         }
         else if (selectedIndex == 5)
         {
@@ -66,6 +78,7 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = true;
             entry_5.IsVisible = true;
             entry_6.IsVisible = true;
+            survey.setNumChoices(6);
         }
         else
         {
@@ -75,6 +88,53 @@ public partial class CreateSurveyPage : ContentPage
             entry_4.IsVisible = false;
             entry_5.IsVisible = false;
             entry_6.IsVisible = false;
+            survey.setNumChoices(0);
         }
+    }
+    //Temporary/Permanent until we figure out a way to find which entry to being accessed
+    //All the methods below starting with OnEntry.. detects when the entry has text entered and sets the proper parts of the survey
+    void OnEntryCompletedTitle(object sender, EventArgs e)
+    {
+        survey.setTitle(((Entry)sender).Text);
+    }
+    void OnEntryCompletedA(object sender, EventArgs e)
+    {
+        survey.setA(((Entry)sender).Text);
+    }
+    void OnEntryCompletedB(object sender, EventArgs e)
+    {
+        survey.setB(((Entry)sender).Text);
+    }
+    void OnEntryCompletedC(object sender, EventArgs e)
+    {
+        survey.setC(((Entry)sender).Text);
+    }
+    void OnEntryCompletedD(object sender, EventArgs e)
+    {
+        survey.setD(((Entry)sender).Text);
+    }
+    void OnEntryCompletedE(object sender, EventArgs e)
+    {
+        survey.setE(((Entry)sender).Text);
+    }
+    void OnEntryCompletedF(object sender, EventArgs e)
+    {
+        survey.setF(((Entry)sender).Text);
+    }
+    //end of temporary/permanent
+    async void submitClicked(object sender, EventArgs e)
+    {
+        //Checks to make sure object has right values and prints to the output window
+        var navigationParameter = new Dictionary<string, object>
+        {
+            { "NewSurvey", survey }
+        };
+        //Sends object to previous page (SurveysPage)
+        await Shell.Current.GoToAsync($"..", navigationParameter);
+    }
+    //Goes back to previous page
+    private async void GoBack(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("..");
     }
 }
