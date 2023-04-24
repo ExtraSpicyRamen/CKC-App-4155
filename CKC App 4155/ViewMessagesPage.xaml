@@ -9,10 +9,10 @@
         <Frame BackgroundColor="#eeeeee">
             <StackLayout>
                 <Label Text="Recieved Messages" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
-                <ListView x:Name="listofSentMessages" ItemSelected="listofSentMessages_ItemSelected">
+                <ListView x:Name="listofReceivedMessages" ItemSelected="listofReceivedMessages_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding SenderName}" Detail="{Binding MTitle}">
+                            <TextCell Text="{Binding ReceiverName}" Detail="{Binding MTitle}">
                             </TextCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -22,10 +22,10 @@
         <Frame BackgroundColor="#eeeeee">
             <StackLayout>
                 <Label Text="Sent Messages" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
-                <ListView x:Name="listofReceivedMessages" ItemSelected="listofReceivedMessages_ItemSelected">
+                <ListView x:Name="listofSentMessages" ItemSelected="listofSentMessages_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding ReceiverName}" Detail="{Binding MTitle}">
+                            <TextCell Text="{Binding SenderName}" Detail="{Binding MTitle}">
                             </TextCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

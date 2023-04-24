@@ -8,16 +8,16 @@
     <StackLayout Margin="20">
         <Label Text="Create Message" FontSize="40" FontFamily="RockWellBold" TextColor="#71c450" HorizontalOptions="Center"></Label>
         <Grid Margin="10,10,0,10">
-            <Picker x:Name="receiverPicker" Title="Pick a User" HorizontalTextAlignment="Center">
+            <Picker x:Name="receiverPicker" Title="Pick a User" HorizontalTextAlignment="Center" SelectedIndexChanged="receiverPicker_SelectedIndexChanged">
             </Picker>
         </Grid>
         <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Message Title" HorizontalOptions="StartAndExpand" Margin="5">
             <Entry TextChanged="TitleTextChanged"></Entry>
         </inputLayout:SfTextInputLayout>
-        <Editor x:Name="msgContent" Placeholder="Enter your message here" HeightRequest="240" BackgroundColor="#eeeeee" ></Editor>
+        <Editor x:Name="msgContent" Placeholder="Enter your message here" HeightRequest="240" BackgroundColor="#eeeeee" TextChanged="ContentTextChanged"></Editor>
         <StackLayout Orientation="Horizontal" Spacing="20">
-            <Button Text="Create" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
-            <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
+            <Button Text="Create" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="CreateMessageClicked"></Button>
+            <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="CancelClicked"></Button>
         </StackLayout>
     </StackLayout>
 </ContentPage>

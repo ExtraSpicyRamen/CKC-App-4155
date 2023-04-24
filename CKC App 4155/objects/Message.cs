@@ -9,8 +9,8 @@ namespace CKC_App_4155.objects
 {
     public class Message : ObservableObject
     {
-        public int senderID, messageID, receiverID;
-        public string mTitle, mContent, senderName, receiverName;
+        public int senderID, messageID, receiverID = 0;
+        public string mTitle, mContent, senderName, receiverName = "";
         public string MTitle
         {
             get
