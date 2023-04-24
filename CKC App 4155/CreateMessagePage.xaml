@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              x:Class="CKC_App_4155.CreateMessagePage"
-             Title="CreateMessagePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="CreateMessagePage"
+             Shell.NavBarIsVisible="False">
+    <StackLayout Margin="20">
+        <Label Text="Create Message" FontSize="40" FontFamily="RockWellBold" TextColor="#71c450" HorizontalOptions="Center"></Label>
+        <Grid Margin="10,10,0,10">
+            <Picker x:Name="receiverPicker" Title="Pick a User" HorizontalTextAlignment="Center">
+            </Picker>
+        </Grid>
+        <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Message Title" HorizontalOptions="StartAndExpand" Margin="5">
+            <Entry TextChanged="TitleTextChanged"></Entry>
+        </inputLayout:SfTextInputLayout>
+        <Editor x:Name="msgContent" Placeholder="Enter your message here" HeightRequest="240" BackgroundColor="#eeeeee" ></Editor>
+        <StackLayout Orientation="Horizontal" Spacing="20">
+            <Button Text="Create" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
+            <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>
