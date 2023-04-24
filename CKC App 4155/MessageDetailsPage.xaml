@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CKC_App_4155.MessageDetailsPage"
+             Title="MessageDetailsPage">
+    <StackLayout>
+        <Button Text="Back" FontSize="15" BackgroundColor="#71c450" Margin="10,20,0,20" WidthRequest="100" HorizontalOptions="Start" Clicked="GoBack"></Button>
+        <Frame BackgroundColor="#eeeeee">
+            <StackLayout Margin="20" Spacing="20">
+                <Label Text="Message Title" x:Name="mLabelTitle"></Label>
+                <Label Text="Name of sender" x:Name="mLabelName"></Label>
+                <Label Text="Content of message" x:Name="mLabelContent"></Label>
+                <StackLayout Orientation="Horizontal" Spacing="20">
+                    <Button Text="Reply" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
+                    <Button Text="Delete" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

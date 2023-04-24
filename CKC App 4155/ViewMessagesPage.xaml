@@ -9,7 +9,7 @@
         <Frame BackgroundColor="#eeeeee">
             <StackLayout>
                 <Label Text="Recieved Messages" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
-                <ListView x:Name="listofSentMessages">
+                <ListView x:Name="listofSentMessages" ItemSelected="listofSentMessages_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextCell Text="{Binding SenderName}" Detail="{Binding MTitle}">
@@ -22,7 +22,7 @@
         <Frame BackgroundColor="#eeeeee">
             <StackLayout>
                 <Label Text="Sent Messages" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
-                <ListView x:Name="listofReceivedMessages">
+                <ListView x:Name="listofReceivedMessages" ItemSelected="listofReceivedMessages_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextCell Text="{Binding ReceiverName}" Detail="{Binding MTitle}">
@@ -32,5 +32,6 @@
                 </ListView>
             </StackLayout>
         </Frame>
+        <Button Text="Create New Message" FontSize="15" BackgroundColor="#71c450" Margin="0,20" ></Button>
     </StackLayout>
 </ContentPage>

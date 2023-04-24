@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CKC_App_4155.objects
 {
-    class Message : ObservableObject
+    public class Message : ObservableObject
     {
         public int senderID, messageID, receiverID;
         public string mTitle, mContent, senderName, receiverName;
