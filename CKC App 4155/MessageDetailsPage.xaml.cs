@@ -31,4 +31,9 @@ public partial class MessageDetailsPage : ContentPage
     {
         await Shell.Current.GoToAsync($"..");
     }
+    private async void DeleteMessage(object sender, EventArgs e)
+    {
+        int id = currMsg.GetMessageID();
+        await Shell.Current.GoToAsync($"..?deleteid={id}");
+    }
 }

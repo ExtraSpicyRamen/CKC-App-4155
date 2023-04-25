@@ -12,7 +12,7 @@
                 <Label Text="Content of message" x:Name="mLabelContent"></Label>
                 <StackLayout Orientation="Horizontal" Spacing="20">
                     <Button Text="Reply" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
-                    <Button Text="Delete" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
+                    <Button Text="Delete" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="DeleteMessage"></Button>
                 </StackLayout>
             </StackLayout>
         </Frame>
