@@ -12,7 +12,7 @@
                 <ListView x:Name="listofReceivedMessages" ItemSelected="listofReceivedMessages_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding ReceiverName}" Detail="{Binding MTitle}">
+                            <TextCell Text="{Binding SenderName}" Detail="{Binding MTitle}">
                             </TextCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -25,13 +25,13 @@
                 <ListView x:Name="listofSentMessages" ItemSelected="listofSentMessages_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding SenderName}" Detail="{Binding MTitle}">
+                            <TextCell Text="{Binding ReceiverName}" Detail="{Binding MTitle}">
                             </TextCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
         </Frame>
-        <Button Text="Create New Message" FontSize="15" BackgroundColor="#71c450" Margin="0,20" ></Button>
+        <Button Text="Create New Message" FontSize="15" BackgroundColor="#71c450" Margin="0,20" Clicked="GoToCreateMsg"></Button>
     </StackLayout>
 </ContentPage>

@@ -13,12 +13,9 @@ public partial class MessageDetailsPage : ContentPage
             currMsg = value;
             //I don't think this is needed but needs to be tested later
             OnPropertyChanged(nameof(currMsg));
-            //Sets the title and options and has to be done here so app doesn't crash since this method is activated after ViewSurveryPage constructor
             mLabelTitle.Text = currMsg.GetmTitle();
             mLabelName.Text = currMsg.GetSenderName();
             mLabelContent.Text = currMsg.GetmContent();
-            //surTitle.Text = currSurvey.getTitle();
-            //NumOptions(currSurvey.getNumChoices());
         }
     }
     public MessageDetailsPage()
@@ -33,7 +30,15 @@ public partial class MessageDetailsPage : ContentPage
     }
     private async void DeleteMessage(object sender, EventArgs e)
     {
-        int id = currMsg.GetMessageID();
-        await Shell.Current.GoToAsync($"..?deleteid={id}");
+        //assigns sendOver to the selected message item
+        Message sendOver = currMsg;
+        //Must use a dictionary to send over objects to new page or previous page
+        var navigationParameter = new Dictionary<string, object>
+            {
+                { "DeleteMsg", sendOver}
+            };
+        //Sends the message item over to the MessageDetailsPage so they can view message to either reply or delete.
+        await Shell.Current.GoToAsync($"..", navigationParameter);
+        sendOver = null;
     }
 }

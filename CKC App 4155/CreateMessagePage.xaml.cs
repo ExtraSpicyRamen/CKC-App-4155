@@ -13,6 +13,8 @@ public partial class CreateMessagePage : ContentPage
 		InitializeComponent();
 		Random random = new Random();
         BasicSimulation();
+        newMsg.SetSenderName("Beth");
+        newMsg.SetSenderID(1);
 		int generatedID = random.Next(0, 100);
 		newMsg.SetMessageID(generatedID);
 	}
@@ -31,13 +33,13 @@ public partial class CreateMessagePage : ContentPage
 		users.Add("Bobby");
 		users.Add("James");
 		users.Add("Tiffany");
-		users.Add("Beth");
+		users.Add("John");
 		receiverPicker.ItemsSource = users;
     }
 
     private void receiverPicker_SelectedIndexChanged(object sender, EventArgs e)
     {
-        newMsg.SetSenderName((string)((Picker)sender).SelectedItem);
+        newMsg.SetReceiverName((string)((Picker)sender).SelectedItem);
     }
 
     private async void CreateMessageClicked(object sender, EventArgs e)
@@ -63,6 +65,7 @@ public partial class CreateMessagePage : ContentPage
                 { "CreatedMessage", sendOver}
             };
             await Shell.Current.GoToAsync($"{nameof(ViewMessagesPage)}", navigationParameter);
+            sendOver = null;
         }
     }
 

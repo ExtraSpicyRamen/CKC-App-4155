@@ -1,17 +1,19 @@
 using CKC_App_4155.objects;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace CKC_App_4155;
 [QueryProperty(nameof(CreatedMessage), "CreatedMessage")]
-[QueryProperty(nameof(DeleteId), "deleteid")]
+[QueryProperty(nameof(DeleteMsg), "DeleteMsg")]
 public partial class ViewMessagesPage : ContentPage
 {
 	Message message;
-    List<Message> sentMessages;
-    List<Message> receivedMessages;
+    //Needed to use oberservablecollection to make sure the listview updates as we delete items from the lists
+    public ObservableCollection<Message> sentMessages = new ObservableCollection<Message>();
+    public ObservableCollection<Message> receivedMessages = new ObservableCollection<Message>();
     Message currMsg;
-    int deletemsg;
-    public int DeleteId
+    Message deletemsg;
+    public Message DeleteMsg
     {
         get => deletemsg;
         set
@@ -19,33 +21,16 @@ public partial class ViewMessagesPage : ContentPage
             deletemsg = value;
             //I don't think this is needed but needs to be tested later
             OnPropertyChanged(nameof(deletemsg));
-            Message currdelete = new Message();
-            string rs = "";
-            //Don't know what is wrong but fix index out of bound error
-            for (int i = 0; i < sentMessages.Count(); i++)
+            Message currdelete = deletemsg;
+            if (sentMessages.Contains(currdelete))
             {
-                if (sentMessages[i].GetMessageID().Equals(deletemsg))
-                {
-                    currdelete = sentMessages[i];
-                    rs = "s";
-                    break;
-                }
-            }
-            for (int i = 0; i < receivedMessages.Count(); i++)
-            {
-                if (receivedMessages[i].GetMessageID().Equals(deletemsg))
-                {
-                    currdelete = receivedMessages[i];
-                    rs = "r";
-                    break;
-                }
-            }
-            if (rs.Equals("r")){
-                receivedMessages.Remove(currdelete);
+                sentMessages.Remove(currdelete);
+                currdelete = null;
             }
             else
             {
-                sentMessages.Remove(currdelete);
+                receivedMessages.Remove(currdelete);
+                currdelete = null;
             }
         }
     }
@@ -54,18 +39,20 @@ public partial class ViewMessagesPage : ContentPage
         get => currMsg;
         set
         {
+            Message recent = new Message();
             currMsg = value;
             //I don't think this is needed but needs to be tested later
             OnPropertyChanged(nameof(currMsg));
-            //Sets the title and options and has to be done here so app doesn't crash since this method is activated after ViewSurveryPage constructor
-            sentMessages.Add(currMsg);
+            if (!sentMessages.Contains(currMsg) && !currMsg.Equals(recent))
+            {
+                recent = currMsg;
+                sentMessages.Add(currMsg);
+            }
         }
     }
     public ViewMessagesPage()
 	{
         InitializeComponent();
-		sentMessages = new List<Message>();
-        receivedMessages = new List<Message>();
         SimpleSimulation();
     }
     private async void listofSentMessages_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -85,7 +72,7 @@ public partial class ViewMessagesPage : ContentPage
             listofSentMessages.SelectedItem = null;
         }
     }
-
+    //Sends over a recievedmessages items
     private async void listofReceivedMessages_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         if (listofReceivedMessages.SelectedItem != null)
@@ -103,17 +90,23 @@ public partial class ViewMessagesPage : ContentPage
             listofReceivedMessages.SelectedItem = null;
         }
     }
+    //Method is just to populate the lists before database implementation
     public void SimpleSimulation()
     {
-        Message message1 = new Message(1, 1, 2, "Testing sent message 1", "this iss the passage that I wrote for the test.", "John", "Betty");
-        Message message2 = new Message(1, 2, 1, "Testing Sent message 2", "this iss the passage that I wrote for the test.", "Betty", "John");
-        Message message3 = new Message(2, 1, 2, "Testing recieved message 1", "this iss the passage that I wrote for the test.", "John", "Betty");
-        Message message4 = new Message(2, 2, 1, "Testing recieved message 2", "this iss the passage that I wrote for the test.", "Betty", "John");
+        Message message1 = new Message(1, 1, 2, "Testing sent message 1", "this iss the passage that I wrote for the test.", "Beth", "John");
+        Message message2 = new Message(1, 2, 2, "Testing Sent message 2", "this iss the passage that I wrote for the test.", "Beth", "John");
+        Message message3 = new Message(2, 1, 1, "Testing recieved message 1", "this iss the passage that I wrote for the test.", "John", "Beth");
+        Message message4 = new Message(2, 2, 1, "Testing recieved message 2", "this iss the passage that I wrote for the test.", "John", "Beth");
         sentMessages.Add(message1);
         sentMessages.Add(message2);
         receivedMessages.Add(message3);
         receivedMessages.Add(message4);
         listofSentMessages.ItemsSource = sentMessages;
         listofReceivedMessages.ItemsSource = receivedMessages;
+    }
+
+    private async void GoToCreateMsg(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"{nameof(CreateMessagePage)}");
     }
 }
