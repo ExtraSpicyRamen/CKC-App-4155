@@ -16,16 +16,16 @@
             <StackLayout>
                 <Grid>
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Username" HelperText="Enter your username or email" HorizontalOptions="StartAndExpand" Margin="5">
-                        <Entry ></Entry>
+                        <Entry x:Name="UserEmail"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
                 <Grid Margin="0,20,0,0">
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Password" EnablePasswordVisibilityToggle="True" HorizontalOptions="StartAndExpand" Margin="5">
-                        <Entry IsPassword="True" ></Entry>
+                        <Entry x:Name="UserPassword" IsPassword="True" ></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
             </StackLayout>
-            <Button Text="Sign in" FontSize="15" BackgroundColor="#71c450" Margin="5,15" Clicked="GotoHomePage">
+            <Button Text="Sign in" FontSize="15" BackgroundColor="#71c450" Margin="5,15" Clicked="SignIn">
             </Button>
             <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <Label Text="Forgot Password?" FontFamily="RockWellBold" HorizontalOptions="StartAndExpand">
