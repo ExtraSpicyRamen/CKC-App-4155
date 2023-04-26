@@ -13,34 +13,34 @@
             <StackLayout>
                 <Grid>
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Username" HelperText="Enter a username" HorizontalOptions="StartAndExpand" Margin="5">
-                        <Entry Margin="5"></Entry>
+                        <Entry x:Name="UserName" Margin="5"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
 
                 <StackLayout Orientation="Horizontal">
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Email" HelperText="Enter your Email" HorizontalOptions="StartAndExpand"  Margin="5">
-                        <Entry Margin="5"></Entry>
+                        <Entry x:Name="UserEmail" Margin="5"></Entry>
                     </inputLayout:SfTextInputLayout>
 
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Phone Number" HelperText="Enter your Phone Number" HorizontalOptions="CenterAndExpand"  Margin="5">
-                        <Entry Margin="5,0,0,10" Keyboard="Numeric"></Entry>
+                        <Entry x:Name="UserPhoneNumber" Margin="5,0,0,10" Keyboard="Numeric"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </StackLayout>
 
                 <Grid Margin="0,20,0,0">
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Password" HelperText="Enter a Password" EnablePasswordVisibilityToggle="True" HorizontalOptions="StartAndExpand"  Margin="5,0,0,10">
-                       <Entry IsPassword="True"></Entry>
+                        <Entry x:Name="UserPassword" IsPassword="True"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
 
                 <Grid Margin="0,20,0,0">
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Re-enter Password" HelperText="Re-enter your password" EnablePasswordVisibilityToggle="True" HorizontalOptions="StartAndExpand" Margin="5,0,0,10">
-                        <Entry IsPassword="True"></Entry>
+                        <Entry x:Name="UserConfirmPassword" IsPassword="True"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Register" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
+                <Button Text="Register" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="SignUp"></Button>
                 <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
             </StackLayout>
             
