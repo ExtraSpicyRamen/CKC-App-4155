@@ -23,6 +23,11 @@
                         <TapGestureRecognizer Tapped="GotoSurveys"></TapGestureRecognizer>
                     </Label.GestureRecognizers>
                 </Label>
+                <Label Text="Events" TextColor="White" FontFamily="RockWell" FontSize="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GotoEvents"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
                 <Label Text="Calendar" TextColor="White" FontFamily="RockWell" FontSize="20">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GotoCalendar"></TapGestureRecognizer>

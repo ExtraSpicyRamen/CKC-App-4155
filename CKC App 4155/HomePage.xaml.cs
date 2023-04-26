@@ -35,4 +35,8 @@ public partial class HomePage : ContentPage
     {
         await Navigation.PushAsync(new Calendar());
     }
+    async void GotoEvents(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new EventPage());
+    }
 }
