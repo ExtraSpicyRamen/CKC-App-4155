@@ -31,6 +31,13 @@ public partial class CreateAccount : ContentPage
         String password = UserPassword.Text;
         String confirmPassword = UserConfirmPassword.Text;
 
+        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
+        {
+            // Display an error message if any of the input fields are empty
+            await DisplayAlert("Error", "Please fill in all fields", "OK");
+            return;
+        }
+
         if (password != confirmPassword)
         {
             // Display an error message if the passwords do not match
