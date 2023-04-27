@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CKC_App_4155.ViewMessagesPage"
+             Title="ViewMessagesPage"
+             Shell.NavBarIsVisible="False">
+    <StackLayout  Margin="10,20,10,0" Spacing="20">
+        <Label Text="Messages" FontSize="50" FontFamily="RockWellBold" TextColor="#71c450" HorizontalOptions="Center"></Label>
+        <Frame BackgroundColor="#eeeeee">
+            <StackLayout>
+                <Label Text="Recieved Messages" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
+                <ListView x:Name="listofReceivedMessages" ItemSelected="listofReceivedMessages_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding SenderName}" Detail="{Binding MTitle}">
+                            </TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
+        <Frame BackgroundColor="#eeeeee">
+            <StackLayout>
+                <Label Text="Sent Messages" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
+                <ListView x:Name="listofSentMessages" ItemSelected="listofSentMessages_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding ReceiverName}" Detail="{Binding MTitle}">
+                            </TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
+        <Button Text="Create New Message" FontSize="15" BackgroundColor="#71c450" Margin="0,20" Clicked="GoToCreateMsg"></Button>
+    </StackLayout>
+</ContentPage>
