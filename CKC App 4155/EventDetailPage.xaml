@@ -3,77 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CKC_App_4155.EventDetailPage"
              Title="Event Detail Page">
-    <ScrollView Margin="20">
-    <StackLayout Margin="20"
-                 Spacing="10">
-
-        <Label TextColor="#71c450" FontSize="30" FontFamily="RockWellBold" HorizontalOptions="Center">SIP it Forward</Label>
-        <Image Source="ck_event_may.png"/>
-
-        <Frame BackgroundColor="#eeeeee"
-                   Padding="5">
-            <StackLayout Margin="10"
-                     Spacing="10">
-            
-        <Label TextColor="#71c450" FontSize="20" FontFamily="RockWellBold" HorizontalOptions="Start">Event Details</Label>
-                <Label FontAttributes="Bold" FontSize="16" FontFamily="RockWellBold">Date:</Label>
-                <Label FontSize="16" FontFamily="Roboto">March 25th</Label>
-                <Label FontAttributes="Bold" FontSize="16" FontFamily="RockWellBold">Time:</Label>
-                <Label FontSize="16" FontFamily="Roboto">9:05 AM - 12:00 PM</Label>
-                <Label FontAttributes="Bold" FontSize="16" FontFamily="RockWellBold">Event Category:</Label>
-                <Label FontSize="16" FontFamily="Roboto">North Carolina Event</Label>
+    <Grid>
+        <StackLayout Margin="20">
+            <StackLayout Margin="10,20,0,10">
+                <Label TextColor="#71c450" FontSize="30" FontFamily="RockWellBold">Survey Results</Label>
             </StackLayout>
-        </Frame>
-
-            <Frame BackgroundColor="#eeeeee"
-                   Padding="5">
-                <StackLayout Margin="10"
-                     Spacing="10">
-
-                    <Label TextColor="#71c450" FontSize="20" FontFamily="RockWellBold" HorizontalOptions="Start">Organizer</Label>
-                    <Label FontSize="16" FontFamily="Roboto">Cool Kids Campaign</Label>
-                </StackLayout>
-            </Frame>
-        
-            <Frame BackgroundColor="#eeeeee"
-                   Padding="5">
-                <StackLayout Margin="10"
-                     Spacing="10">
-
-                    <Label TextColor="#71c450" FontSize="20" FontFamily="RockWellBold" HorizontalOptions="Start">Venue</Label>
-                    <Label FontSize="16" FontFamily="Roboto">Hoptown Brewing Co.</Label>
-                    <Label FontSize="16" FontAttributes="Italic" FontFamily="Roboto">
-                        <Label.Text>107 Plantation Ridge Drive
-                        Morrisville, NC 28117 United States</Label.Text>
-                    </Label>
-                </StackLayout>
-            </Frame>
-
-            <Frame BackgroundColor="#eeeeee"
-                   Padding="5">
-                <StackLayout Margin="10"
-                     Spacing="10">
-
-                    <Label TextColor="#71c450" FontSize="20" FontFamily="RockWellBold" HorizontalOptions="Start">Description</Label>
-                    <Label FontSize="16" FontFamily="Roboto">
-                        <Label.Text>
-                            Sip It Forward® is Hoptown’s super drinkable blonde ale that’s on a mission: To raise awareness and money for four annual charities.
-                            Join us on March 25th to celebrate Hoptown’s Anniversary as they introduce the third year of Sip It Forward® charity beneficiaries,
-                            including COOL KIDS! This race is a jump-start to the year-long fundraising efforts for this program.
-                            
-                            Cool Kids needs YOU! Each runner and walker will receive a Sip It Forward® token in their runner’s pack to choose the charity
-                            they would like to make their donation too. Sign up for a fun race and cast your vote for our organization.
-                            
-                            4 Mile Run $35 entry fee
-                            1 Mile walk $10 entry fee
-                        </Label.Text>
-                    </Label>
-                    
-                </StackLayout>
-            </Frame>
-
-            <Button Text="RSVP for Event" FontSize="15" BackgroundColor="#71c450" Margin="0,15"></Button>
-
+            <StackLayout Margin="0,0,0,0" >
+                <Label FontSize="20" FontFamily="RockWell" Margin="0,0,0,10" x:Name="eventTitle">Event Title</Label>
+                <Label FontSize="20" FontFamily="RockWell" Margin="0,0,0,10" x:Name="eventDetails">Event Details</Label>
+                <Label FontSize="20" FontFamily="RockWell" Margin="0,0,0,10" x:Name="eventHost">Event Host</Label>
+                <Label FontSize="20" FontFamily="RockWell" Margin="0,0,0,10" x:Name="eventLocation">Event Location</Label>
+                
+            </StackLayout>
+            <Button Text="Back" FontSize="15" BackgroundColor="#71c450" Margin="0,10" Clicked="GoBack"></Button>
         </StackLayout>
-    </ScrollView>
+    </Grid>
 </ContentPage>

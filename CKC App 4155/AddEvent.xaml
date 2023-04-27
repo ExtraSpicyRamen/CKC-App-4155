@@ -9,31 +9,37 @@
             
     <StackLayout Margin="10,20,0,10" Spacing="20">
             <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Event Title">
-                <Entry></Entry>
+                <Entry TextChanged="eventTitleChanged"></Entry>
             </inputLayout:SfTextInputLayout>
+        
             <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Event Details" HelperText="Enter Your Event Details">
-                    <Editor AutoSize="TextChanges" IsSpellCheckEnabled="True"></Editor>
+                    <Editor AutoSize="TextChanges" IsSpellCheckEnabled="True" TextChanged="eventDetailsChanged"></Editor>
             </inputLayout:SfTextInputLayout>
+        
             <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Host Name">
-                <Entry></Entry>
+                <Entry TextChanged="eventHostNameChanged"></Entry>
             </inputLayout:SfTextInputLayout>
+        
             <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Location">
-                <Entry></Entry>
+                <Entry TextChanged="eventLocationChanged"></Entry>
             </inputLayout:SfTextInputLayout>
+        
             <Grid Margin="10,0,0,10">
             <Label Text="Start Date" FontSize="20" FontFamily="RockWellBold"/>
             </Grid>
-        <Grid Margin="0,10,0,0">
+        <!--<Grid Margin="0,10,0,0">
             <Frame BorderColor="Black" CornerRadius="3"></Frame>
             <DatePicker x:Name="startDate"
-                            Format="D"
+                           Format="D"
                             MinimumDate="01/01/2020"
                             MaximumDate="12/31/2030"
                             Date="03/21/2023"/>
         </Grid>
-        <Grid Margin="0,20,0,0">
-            <Button Text="Create Event" FontSize="15" BackgroundColor="#71c450"></Button>
-        </Grid>
-    </StackLayout>
+        -->
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Create" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="submitEvent"></Button>
+                <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="cancel"></Button>
+            </StackLayout>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

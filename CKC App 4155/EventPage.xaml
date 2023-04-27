@@ -1,0 +1,39 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CKC_App_4155.EventPage"
+             Shell.NavBarIsVisible="False">
+    <Grid>
+        <!-- main content -->
+        <Grid x:Name="MainContentGrid" BackgroundColor="White">
+            <StackLayout Margin="10,20,10,0" Spacing="20">
+                <Button Text="Create Event" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="CreateEvent"></Button>
+                <Label Text="Events" FontSize="50" FontFamily="RockWellBold" TextColor="#71c450" HorizontalOptions="Center"></Label>
+                <Frame BackgroundColor="#eeeeee"
+                   Padding="5">
+                    <StackLayout Margin="10"
+                     Spacing="10">
+                        <Label Text="Active Events" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
+                        <!-- Temporary solution for clicking will change later -->
+                        <ListView x:Name="listEvents" ItemSelected="listEvents_ItemSelected">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <!---Binding doesn't recognize the path to get the titles from the list of objects-->
+                                        <Label Text="{Binding Title}"></Label>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="#eeeeee"
+                   Padding="5">
+                    <StackLayout Margin="10"
+                     Spacing="10">
+                        <Label Text="Past Events" FontFamily="RockWell" FontAttributes="Italic" FontSize="25" TextColor="#1e13a3"></Label>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

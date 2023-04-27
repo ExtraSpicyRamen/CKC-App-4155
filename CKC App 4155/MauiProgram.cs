@@ -30,7 +30,6 @@ public static class MauiProgram
         builder.Services.AddSingleton<MainViewModel>();
 
         builder.Services.AddTransient<EventDetailPage>();
-        builder.Services.AddTransient<EventDetailViewModel>();
         return builder.Build();
 	}
 }
