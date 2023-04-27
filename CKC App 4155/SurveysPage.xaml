@@ -13,12 +13,10 @@
                     <StackLayout Margin="10"
                      Spacing="10">
                         <Label Text="Active Surveys" FontSize="25" FontFamily="RockWellBold" TextColor="#71c450"></Label>
-                        <!-- Temporary solution for clicking will change later -->
                         <ListView x:Name="listSurveys" ItemSelected="listSurveys_ItemSelected">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <!---Binding doesn't recognize the path to get the titles from the list of objects-->
                                         <Label Text="{Binding Title}"></Label>
                                     </ViewCell>
                                 </DataTemplate>
