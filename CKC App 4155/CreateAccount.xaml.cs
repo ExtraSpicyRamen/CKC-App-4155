@@ -49,6 +49,9 @@ public partial class CreateAccount : ContentPage
 
         var user = userCredential.User;
         var uid = user.Uid;
+
+        await Navigation.PushAsync(new MainPage());
+        await DisplayAlert("Success", "Account created successfully", "OK");
         Debug.WriteLine(uid + " signed in");
     }
 }

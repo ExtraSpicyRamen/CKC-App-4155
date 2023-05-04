@@ -47,6 +47,10 @@ public partial class MainPage : ContentPage
 
         var user = userCredential.User;
         var uid = user.Uid;
+
+        await Navigation.PushAsync(new HomePage());
+        await DisplayAlert("Success", "Account logged in successfully", "OK");
+
         Debug.WriteLine(uid + " signed in");
     }
 
