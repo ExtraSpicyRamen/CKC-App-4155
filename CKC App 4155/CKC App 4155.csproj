@@ -53,11 +53,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0-preview1" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
 		<PackageReference Include="FirebaseAuthentication.net" Version="4.0.2" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
-		<PackageReference Include="Syncfusion.Maui.Core" Version="21.1.35" />
+		<PackageReference Include="Syncfusion.Maui.Core" Version="21.2.3" />
 
 	  <PackageReference Include="XCalendar.Maui" Version="4.4.2" />
 	</ItemGroup>
