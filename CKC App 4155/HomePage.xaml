@@ -33,7 +33,11 @@
                         <TapGestureRecognizer Tapped="GotoCalendar"></TapGestureRecognizer>
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="Messages" TextColor="White" FontFamily="RockWell" FontSize="20"></Label>
+                <Label Text="Messages" TextColor="White" FontFamily="RockWell" FontSize="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GotoMessages"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
                 <Label Text="Settings" TextColor="White" FontFamily="RockWell" FontSize="20">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GotoSettings"></TapGestureRecognizer>

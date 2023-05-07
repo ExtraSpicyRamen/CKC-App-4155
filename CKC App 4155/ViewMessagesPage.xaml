@@ -33,5 +33,6 @@
             </StackLayout>
         </Frame>
         <Button Text="Create New Message" FontSize="15" BackgroundColor="#71c450" Margin="0,20" Clicked="GoToCreateMsg"></Button>
+        <Button Text="Back" FontSize="15" BackgroundColor="#71c450" Margin="0,20" Clicked="GoBack"></Button>
     </StackLayout>
 </ContentPage>

@@ -73,4 +73,8 @@ public partial class SurveysPage : ContentPage
             listSurveys.SelectedItem = null;
         }
     }
+    private async void GoBack(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"..");
+    }
 }

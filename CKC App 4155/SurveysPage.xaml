@@ -7,6 +7,7 @@
         <Grid x:Name="MainContentGrid" BackgroundColor="White">
             <StackLayout Margin="10,20,10,0" Spacing="20">
                 <Button Text="Create Survey" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="CreateSurvey"></Button>
+                <Button Text="Back" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="GoBack"></Button>
                 <Label Text="Surveys" FontSize="50" FontFamily="RockWellBold" TextColor="#71c450" HorizontalOptions="Center"></Label>
                 <Frame BackgroundColor="#eeeeee"
                    Padding="5">
