@@ -16,12 +16,12 @@
             <StackLayout>
                 <Grid>
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Username" HelperText="Enter your username or email" HorizontalOptions="StartAndExpand" Margin="5">
-                        <Entry x:Name="UserEmail"></Entry>
+                        <Entry Text="{Binding Email}"></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
                 <Grid Margin="0,20,0,0">
                     <inputLayout:SfTextInputLayout ContainerType="Outlined" ContainerBackground="white" Hint="Password" EnablePasswordVisibilityToggle="True" HorizontalOptions="StartAndExpand" Margin="5">
-                        <Entry x:Name="UserPassword" IsPassword="True" ></Entry>
+                        <Entry Text="{Binding Password}" IsPassword="True" ></Entry>
                     </inputLayout:SfTextInputLayout>
                 </Grid>
             </StackLayout>
@@ -30,12 +30,12 @@
             <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <Label Text="Forgot Password?" FontFamily="RockWellBold" HorizontalOptions="StartAndExpand">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GotoForgotPassword"></TapGestureRecognizer>
+                        <TapGestureRecognizer Command="{Binding ResetPasswordCommand}"></TapGestureRecognizer>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="Register" FontFamily="RockWellBold" HorizontalOptions="EndAndExpand">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GotoCreateAccount"></TapGestureRecognizer>
+                        <TapGestureRecognizer Command="{Binding SignUpCommand}"></TapGestureRecognizer>
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>
