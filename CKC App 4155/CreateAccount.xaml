@@ -4,6 +4,7 @@
              xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              x:Class="CKC_App_4155.CreateAccount"
              Shell.NavBarIsVisible="False">
+    
     <Grid>
         <StackLayout Margin="20">
             <StackLayout Margin="0,20,0,10">
@@ -40,7 +41,7 @@
                 </Grid>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Register" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20" Clicked="SignUp"></Button>
+                <Button Text="Register" FontSize="15" BackgroundColor="#71c450" HorizontalOptions="FillAndExpand" Margin="0,20" Command="{Binding SignUpCommand}"></Button>
                 <Button Text="Cancel" FontSize="15" BackgroundColor="#8d87d1" HorizontalOptions="FillAndExpand" Margin="0,20"></Button>
             </StackLayout>
             
