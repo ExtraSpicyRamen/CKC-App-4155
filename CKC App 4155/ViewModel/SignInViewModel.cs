@@ -16,26 +16,34 @@ namespace CKC_App_4155.ViewModel
         public string Password { get; set; }
 
         public ICommand SignInCommand { get; }
+        public ICommand SignOutCommand { get; }
+        public ICommand ResetPasswordCommand { get; }
+
+        private FirebaseAuthClient client;
 
         public SignInViewModel()
-        {
-            SignInCommand = new Command(async () => await SignIn());
-        }
-
-        private async Task SignIn()
         {
             var config = new FirebaseAuthConfig
             {
                 ApiKey = "AIzaSyBH_-jT47UI-yQg6G5bKnZA3C0Cg5lxpPM",
                 AuthDomain = "ckc-app-4155.firebaseapp.com",
                 Providers = new FirebaseAuthProvider[]
-        {
-            new GoogleProvider().AddScopes("email"),
-            new EmailProvider()
-        },
+                {
+                new GoogleProvider().AddScopes("email"),
+                new EmailProvider()
+                },
             };
 
-            var client = new FirebaseAuthClient(config);
+            client = new FirebaseAuthClient(config);
+
+            SignInCommand = new Command(async () => await SignIn());
+            SignOutCommand = new Command(async () => await SignOut());
+            ResetPasswordCommand = new Command(async () => await ResetPassword());
+        }
+
+
+        private async Task SignIn()
+        {
 
             if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
             {
@@ -53,5 +61,19 @@ namespace CKC_App_4155.ViewModel
             await Application.Current.MainPage.DisplayAlert("Success", "Account logged in successfully", "OK");
             Debug.WriteLine(uid + " signed in");
         }
+        private async Task SignOut()
+        {
+            // Sign out user
+            client.SignOut();
+            // Navigate back to login page
+            await Application.Current.MainPage.Navigation.PushAsync(new MainPage());
+        }
+
+        private async Task ResetPassword()
+        {
+            // Send password reset email
+            await client.ResetEmailPasswordAsync(Email);
+        }
     }
+
 }
