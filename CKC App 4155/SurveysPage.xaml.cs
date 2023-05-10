@@ -47,6 +47,8 @@ public partial class SurveysPage : ContentPage
         //Dummy item to test what multiple objects in listview looks like
         Survey testingdummy = new Survey();
         testingdummy.setTitle("testing");
+        testingdummy.setA("test");
+        testingdummy.setNumChoices(1);
         SurveysToBeList.Add(testingdummy);
         listSurveys.ItemsSource = SurveysToBeList;
     }
