@@ -39,4 +39,8 @@ public partial class HomePage : ContentPage
     {
         await Navigation.PushAsync(new EventPage());
     }
+    private async void GotoMessages(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new ViewMessagesPage());
+    }
 }

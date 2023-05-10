@@ -109,4 +109,8 @@ public partial class ViewMessagesPage : ContentPage
     {
         await Shell.Current.GoToAsync($"{nameof(CreateMessagePage)}");
     }
+    private async void GoBack(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"..");
+    }
 }
