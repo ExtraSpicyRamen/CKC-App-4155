@@ -16,10 +16,13 @@ namespace CKC_App_4155.ViewModel
         public string Password { get; set; }
 
         public ICommand SignInCommand { get; }
-
+        public ICommand ResetPasswordCommand { get; }
+        public ICommand SignUpCommand { get; }
         public SignInViewModel()
         {
             SignInCommand = new Command(async () => await SignIn());
+            ResetPasswordCommand = new Command(async () => await ResetPassword());
+            SignUpCommand = new Command(async () => await SignUpButton());
         }
 
         private async Task SignIn()
@@ -52,6 +55,15 @@ namespace CKC_App_4155.ViewModel
             await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
             await Application.Current.MainPage.DisplayAlert("Success", "Account logged in successfully", "OK");
             Debug.WriteLine(uid + " signed in");
+        }
+        private async Task SignUpButton()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new CreateAccount());
+        }
+
+        private async Task ResetPassword()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new ForgotPasswordPage());
         }
     }
 }
